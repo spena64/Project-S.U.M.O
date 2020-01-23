@@ -1,4 +1,4 @@
-# Project-S.U.M.O
+# Project S.U.M.O.
 
 ## Team Members 
 
