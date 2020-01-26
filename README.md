@@ -5,7 +5,7 @@
 - Steven Fadel 
 - Andrew Lightbody
 - Stephanie Pena
-- Michael Triana 
+- Mike Triana 
 
 ## Vision Statement 
 
