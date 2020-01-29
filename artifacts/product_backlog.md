@@ -10,10 +10,9 @@
 | 005 | As a solo player I want to play with CPU's so that I can practice the game | - | - | - | NOT STARTED |
 | 006 | As a solo player, I want to join a random public lobby, so that I can play without a pre-existing group. | - | - | - | NOT STARTED |
 | 007 | As a Competitive player I want to set up a tournament bracket to challenge other players | - | - | - | NOT STARTED |
-| 008 | As a solo player, I want to host a public lobby, so that random players can join my game without a room code. | - | - | - | NOT STARTED |
-| 009 | As a player, I want to choose from a pool of character, so that I can choose a play style | - | - | - | NOT STARTED |
-| 010 | As a player I want to adjust audio levels, so that I can choose what I want to listen to. | - | - | - | NOT STARTED |
-| 011 | As a room host, I want to be able to kick players, so that I can play with who I choose. | - | - | - | NOT STARTED |
-| 012 | As an unskilled player, I want to access a tutorial, so that I can learn how to play the game. | - | - | - | NOT STARTED |
-| 013 | As an active player, I want to bump my opponent out of the ring, so that I can win the game. | - | - | - | NOT STARTED |
-| 014 | As a benched player, I want to spectate the active game, so that I'm not bored while waiting. | - | - | - | NOT STARTED |
+| 008 | As a player, I want to choose from a pool of character, so that I can choose a play style | - | - | - | NOT STARTED |
+| 009 | As a player I want to adjust audio levels, so that I can choose what I want to listen to. | - | - | - | NOT STARTED |
+| 010 | As a room host, I want to be able to kick players, so that I can play with who I choose. | - | - | - | NOT STARTED |
+| 011 | As an unskilled player, I want to access a tutorial, so that I can learn how to play the game. | - | - | - | NOT STARTED |
+| 012 | As an active player, I want to bump my opponent out of the ring, so that I can win the game. | - | - | - | NOT STARTED |
+| 013 | As a benched player, I want to spectate the active game, so that I'm not bored while waiting. | - | - | - | NOT STARTED |
