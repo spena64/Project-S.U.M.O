@@ -2,8 +2,8 @@
 
 | ID | User Story | Effort | Priority | Validation Criteria | Status |
 |----|------------|--------|----------|---------------------|--------|
-| 000 | As a player, I want to access the web page so that I can play the game. | - | - | - | STARTED |
-| 001 | As a player, I want to make a username, so that I can be identified. | - | - | - | STARTED |
+| 000 | As a player, I want to access the web page so that I can play the game. | - | - | - | WORKING |
+| 001 | As a player, I want to make a username, so that I can be identified. | - | - | - | WORKING |
 | 002 | As a social person, I want to host a private game so that I can play with my friends. | - | - | - | NOT STARTED |
 | 003 | As a social person, I want to host a chatroom so that I can socialize with others | - | - | - | NOT STARTED |
 | 004 | As a room host, I want to invite other players so that I can play with who I choose. | - | - | - | NOT STARTED |
