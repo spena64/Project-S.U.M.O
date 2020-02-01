@@ -2,8 +2,8 @@
 
 | Requirement ID | User Story ID | Requirement | Status |
 |----------------|---------------|-------------|--------|
-|            000 |           000 | The server shall display the web page to the client. | WORKING |
-|            001 |           000 | The user shall be able to access the page via a url. | NOT STARTED |
-|            002 |           001 | The website shall prompt the user to enter a nickname. | WORKING |
-|            003 |           001 | The website shall allow the user to type their nickname. | WORKING |
-|            004 |           001 | The server shall store the user's nickname in temporary memory. | NOT STARTED |
+|            000 |           000 | The server shall display the web page to the client. | DONE |
+|            001 |           000 | The user shall be able to access the page via a url. | WORKING |
+|            002 |           001 | The website shall prompt the user to enter a nickname. | DONE |
+|            003 |           001 | The website shall allow the user to type their nickname. | DONE |
+|            004 |           001 | The server shall store the user's nickname in temporary memory. | WORKING |
