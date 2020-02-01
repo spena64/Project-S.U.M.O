@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>SUMO</title>
+</head>
+<header>
+  <h1>Project S.U.M.O.</h1>
+</header>
+<body>
+  <p>
+    <button onclick="inputNickname()">Enter a nickname!</button>
+  </p>
+  <p id="input"></p>
+  <script>
+    function inputNickname() {
+      var name = prompt("Enter your desired nickname.");
+      if (name != null) {
+        document.getElementById("input").innerHTML = "Welcome, " + name + "!";
+      }
+    }
+  </script>
+</body>
+</html>
