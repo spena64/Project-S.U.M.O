@@ -13,9 +13,22 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 
 ## Sprint 1 
 
-- [Product Backlog](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/product_backlog.md)
-- [Sprint Backlog](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/sprint1_backlog.md)
+- [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=2086180378)
 - [Requirements](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/requirements.md)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit?usp=sharing)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
+
+## Sprint 2
+
+- [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=534277414)
+- [Requirements](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/requirements.md)
+- [Trello Board](https://trello.com/b/imslrVps/project-sumo)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit?usp=sharing)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
+- Design Documents
+  - System Architecture
+  - Class Diagrams
+  - Sequence Diagrams
