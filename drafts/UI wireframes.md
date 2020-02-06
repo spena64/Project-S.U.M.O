@@ -16,7 +16,7 @@
   * [Credits](#credits)
 - [Private Lobby](#private-lobby)
   * [Classic Mode - Host](#classic-mode---host)
-  * [Classic Mode - Non-Host](#class-mode---non-host)
+  * [Classic Mode - Non-Host](#classic-mode---non-host)
   * [Tournament Mode - Host](#tournament-mode---host)
   * [Tournament Mode - Non-Host](#tournament-mode---non-host)
 - [In Queue](#in-queue)
