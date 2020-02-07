@@ -4,7 +4,7 @@
 
 # Data Design
 
-[Entity Relationship Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Entity%20Relationship%20Diagram.PNG)
+![Entity Relationship Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Entity%20Relationship%20Diagram.PNG)
 
 # Business Rules
 
