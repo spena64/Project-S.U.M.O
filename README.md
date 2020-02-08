@@ -29,6 +29,7 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit?usp=sharing)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
 - Design Documents
+  - [Event Storming](https://miro.com/app/board/o9J_kvGTt2E=/)
   - [System Architecture](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md)
   - Class Diagrams
   - Sequence Diagrams
