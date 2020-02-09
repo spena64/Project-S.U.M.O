@@ -12,13 +12,13 @@
 
 # Business Rules
 
--Terms and Services
-    -[Terms of Service for Firebase Services](https://cloud.google.com/terms/)
-    -[Google APIs Terms of Service](https://developers.google.com/terms/)
-    -[Firebase Data Processing and Security Terms](https://firebase.google.com/terms/data-processing-terms)
+- Terms and Services
+    - [Terms of Service for Firebase Services](https://cloud.google.com/terms/)
+    - [Google APIs Terms of Service](https://developers.google.com/terms/)
+    - [Firebase Data Processing and Security Terms](https://firebase.google.com/terms/data-processing-terms)
 
--Guidelines
-    -[Firebase Logo Guidelines](https://firebase.google.com/brand-guidelines)
+- Guidelines
+    - [Firebase Logo Guidelines](https://firebase.google.com/brand-guidelines)
 
 # User Interface Design
 
