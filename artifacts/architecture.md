@@ -40,6 +40,10 @@
 
 # Build-vs-Buy Decisions
 
+- Third Party Libraries
+    - Firebase JavaScript SDK
+    - Firebase Tools
+
 # Reuse
 
 # Change Strategy
