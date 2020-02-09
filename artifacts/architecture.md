@@ -1,5 +1,9 @@
 # Program Organization
 
+![Context Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_SystemContext.PNG)
+![Container Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_Container.PNG)
+![Component Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_ComponentGameApp.PNG)
+
 # Major Classes
 
 # Data Design
@@ -10,7 +14,7 @@
 
 # User Interface Design
 
-[Wireframe Mockups](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20wireframes.md)
+[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20Design.md)
 
 # Resource Management
 
