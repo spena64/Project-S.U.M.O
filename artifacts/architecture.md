@@ -12,7 +12,7 @@
 
 # Business Rules
 
--Terms aand Services
+-Terms and Services
     -[Terms of Service for Firebase Services](https://cloud.google.com/terms/)
     -[Google APIs Terms of Service](https://developers.google.com/terms/)
     -[Firebase Data Processing and Security Terms](https://firebase.google.com/terms/data-processing-terms)
