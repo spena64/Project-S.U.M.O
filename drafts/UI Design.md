@@ -25,6 +25,8 @@
   * [Winner](#winner)
   * [Loser](#loser)
 
+- [UI/User Story Relation Chart](#ui/user-story-relation-chart)
+
 ## Landing Page
 
 ![Landing Page](https://github.com/spena64/Project-S.U.M.O/blob/master/images/1_Landing_Page.png)
@@ -149,3 +151,22 @@ This screen displays a message to the winner of the match. It also gives the opt
 ![You Lose!](https://github.com/spena64/Project-S.U.M.O/blob/master/images/6_Loser.png)
 
 This screen displays a message to the loser of the match. It also gives the option to rematch (which, if reciprocated, will place both players back into [character selection](#character-select)), start a new game (which will place the player back into the [matchmaking queue](#in-queue)]), or return to the [main menu](#as-user). This screen is specific to public matches in classic mode. For private lobbies and public tournaments, it would display the loser message and then present the option to return to the lobby ([tournament](#tournament-mode---host) or [classic](#classic-mode---host)) or to quit and return to the [main menu](#as-user).
+
+
+## UI/User Story Relation Chart
+
+| User Story ID | User Story | UI Screen | Relation |
+|---------------|------------|-----------|----------|
+| US-0 | As a player, I want to access the web page so that I can access the game. | [Landing Page](#landing-page) | The landing page is the first page seen on the website, thus allowing the player to access the game. |
+| US-1 | As a player, I want to make a username, so that I can be identified. | [Create an Account](#create-an-account) / [Login](#login) | Creating an account allows the user to make a username to be identified, and logging in allows past users to be identified. |
+| US-2 | As a social person, I want to chat with other players so that I can socialize with them. | [Private Lobbies](#private-lobby) / [Game Space](#game-space) | Chatting with other players is supported in private lobbies as well as in any public match. |
+| US-3 | As a solo player I want to play with CPU's, so that I can practice the game | TODO | TODO |
+| US-4 | As a solo player, I want to queue for a random match, so that I can play against another player. | [Quick Play](#quick-play) / [In Queue](#in-queue) | Players can join a matchmaking queue through the quick play option in the main menu. |
+| US-5 | As an unskilled player, I want to access a tutorial, so that I can learn how to play the game. | [How to Play](#how-to-play) | By selecting "How to Play" from the main menu, the user can view controls and objectives to teach them how to interact with the game. |
+| EP-1 | Core Gameplay Mechanics | [Game Space](#game-space) | All core gameplay mechanics are interacted with through the game space. |
+| EP-2-1 | As a social person, I want to create a private lobby so that I can play with my friends. | [Home Page](#home-page) / [Private Game](#private-game) | Players can create a private lobby using the "Private Game" option in the main menu and the "Create Lobby" option in the private game menu. |
+| EP-2-2 - EP-2-5 | Room Host Privileges | [Classic Mode - Host](#classic-mode---host) / [Tournament Mode - Host](#tournament-mode---host) | All room host privileges are accessible as a room host in any private lobby. |
+| EP-3 | Tournament Brackets | [Tournament Mode - Host](#tournament-mode---host) / [Tournament Mode - Non-Host](#tournament-mode---non-host) | Tournament lobbies create tournament brackets and display tournament information to players. |
+| EP-4 | Character Selection | [Character Select](#character-select) | The character select page allows players to scroll through different characters, view stat differences, and choose a character that fits their desired playstyle. |
+| EP-5 | Audio | [Home Page](#home-page) / TO DO | The header bar (first shown on the home page and accessible from every subsequent screen) displays the "Game Settings" option, which will allow the user to change audio settings. |
+
