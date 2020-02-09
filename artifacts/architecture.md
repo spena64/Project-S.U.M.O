@@ -14,7 +14,7 @@
 
 # User Interface Design
 
-[Wireframe Mockups](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20wireframes.md)
+[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20Design.md)
 
 # Resource Management
 
