@@ -100,34 +100,52 @@ This page displays the names of the developers of the game. The user may then re
 
 ![Private Lobby - Classic Mode as Host](https://github.com/spena64/Project-S.U.M.O/blob/master/images/3_Private_Lobby_Classic_Host.png)
 
+In the private lobby view for classic mode as a host, the game space is displayed as the most prominent part of the screen. While waiting (either for another player to join or for another player to ready up) the players can practice by freely moving around in the game space. The room code is displayed above the game space, such that it can be shared for other players to join. To the left of the room code, there is a dropdown menu containing the game mode - the host can use this to change the mode to [tournament](#tournament-mode---host) if they see fit. Below the game space is the button to ready up (such that when both players have readied up the game can start) and a the button to force start (if the host chooses to start the game without the other player readying up). Once a game starts, the players are put into [character selction](#character-select). To the upper right of the game space is the player list, showing the current players in the lobby. Player1 has a badge next to their username to indicate they are the host of the lobby, and as a host they have the option to promote (represented by the up arrow) or kick (represented by the block symbol) other players. Below the player list is the chat, where players can input text to communicate with other players in the lobby. 
+
 ### Classic Mode - Non-Host
 
 ![Private Lobby - Classic Mode as Non-Host](https://github.com/spena64/Project-S.U.M.O/blob/master/images/3_Private_Lobby_Classic.png)
+
+In the private lobby view for classic mode as a non-host, the game space is displayed as the most prominent part of the screen. While waiting (either for another player to join or for another player to ready up) the players can practice by freely moving around in the game space. The room code is displayed above the game space, such that it can be shared for other players to join. To the left of the room code, there is a dropdown menu containing the game mode; however, as a non-host this is just to display the mode, as the non-host cannot interact with the dropdown menu. Below the game space is the button to ready up (such that when both players have readied up the game can start). Once a game starts, the players are put into [character selction](#character-select). To the upper right of the game space is the player list, showing the current players in the lobby. Player1 has a badge next to their username to indicate they are the host of the lobby. Below the player list is the chat, where players can input text to communicate with other players in the lobby. 
 
 ### Tournament Mode - Host
 
 ![Private Lobby - Tournament Mode as Host](https://github.com/spena64/Project-S.U.M.O/blob/master/images/3_Private_Lobby_Tournament_Host.png)
 
+In the private lobby view for tournament mode as a host, the tournament bracket is displayed as the most prominent part of the screen. After each match, the tournment bracket will be updated to reflect the winners/new matches. The room code is displayed above the tournament bracket, such that it can be shared for other players to join. To the left of the room code, there is a dropdown menu containing the game mode - the host can use this to change the mode to [classic](#classic-mode---host) if they see fit. Below the tournament bracket are several options. Specific to tournament mode, there is the option to allow the game to auto-generate matches (in which an algorithm places players from the player list randomly in bracket slots). There is also an option to shuffle, which runs the algorithm again, resulting in different random matchups. If the auto-generate matches option is unchecked, then the host can move players to each slot as they choose. There is, of course, the button to ready up (such that when all players have readied up the game can start) and a the button to force start (if the host chooses to start the game without the other players readying up). Once a game starts, the players are put into [character selction](#character-select). To the upper right of the tournament bracket is the player list, showing the current players in the lobby. Player1 has a badge next to their username to indicate they are the host of the lobby, and as a host they have the option to promote (represented by the up arrow) or kick (represented by the block symbol) other players. Below the player list is the chat, where players can input text to communicate with other players in the lobby. 
+
 ### Tournament Mode - Non-Host
 
 ![Private Lobby - Tournament Mode as Non-Host](https://github.com/spena64/Project-S.U.M.O/blob/master/images/3_Private_Lobby_Tournament.png)
+
+In the private lobby view for tournament mode as a non-host, the tournament bracket is displayed as the most prominent part of the screen. After each match, the tournment bracket will be updated to reflect the winners/new matches. The room code is displayed above the tournament bracket, such that it can be shared for other players to join. To the left of the room code, there is a dropdown menu containing the game mode; however, as a non-host this is just to display the mode, as the non-host cannot interact with the dropdown menu. Below the game space is the button to ready up (such that when all players have readied up the game can start). Once a game starts, the players are put into [character selction](#character-select). To the upper right of the tournament bracket is the player list, showing the current players in the lobby. Player1 has a badge next to their username to indicate they are the host of the lobby. Below the player list is the chat, where players can input text to communicate with other players in the lobby. 
 
 ## In Queue
 
 ![In Queue](https://github.com/spena64/Project-S.U.M.O/blob/master/images/3_In_Queue.png)
 
+When a player joins a public match, they are immediately placed in a queue while waiting to find a match. This simply serves as a loading screen - when a match has been found, the players are put into [character selction](#character-select). They also have the option to leave the queue and return to the [main menu](#as-user). 
+
 ## Character Select
 
 ![Character Select](https://github.com/spena64/Project-S.U.M.O/blob/master/images/4_Character_Select.png)
+
+Before a match begins, the players are able to choose their characters. Both players in a match are shown the same character select screen, and they can view what the other player is choosing. The character select screen allows players to scroll through availble characters, view their stats and aesthetics, and finally ready up when they have chosen their character. Once both players have chosen their characters and readied up, [the match can begin](#game-space). 
 
 ## Game Space
 
 ![Game Space](https://github.com/spena64/Project-S.U.M.O/blob/master/images/5_Game_Space.png)
 
+The game space is the actual arena space in which the game will be played. Displayed promintently is the ciruclar arena, which each player beginning at either side. The players will use key inputs to move around the arena (using arrow keys or WASD), and the first player to knock the other out of the arena will be the [winner](#winner), while the other will [lose](#lose). Displayed next to the game space is the chat log and each player's usernames. 
+
 ### Winner
 
 ![You Win!](https://github.com/spena64/Project-S.U.M.O/blob/master/images/6_Winner.png)
 
+This screen displays a message to the winner of the match. It also gives the option to rematch (which, if reciprocated, will place both players back into [character selection](#character-select)), start a new game (which will place the player back into the [matchmaking queue](#in-queue)]), or return to the [main menu](#as-user). This screen is specific to public matches. For private lobbies, it would display the winner message and then present the option to return to the [lobby](#classic-mode---host) or to quit and return to the [main menu](#as-user).
+
 ### Loser
 
 ![You Lose!](https://github.com/spena64/Project-S.U.M.O/blob/master/images/6_Loser.png)
+
+This screen displays a message to the loser of the match. It also gives the option to rematch (which, if reciprocated, will place both players back into [character selection](#character-select)), start a new game (which will place the player back into the [matchmaking queue](#in-queue)]), or return to the [main menu](#as-user). This screen is specific to public matches. For private lobbies, it would display the loser message and then present the option to return to the [lobby](#classic-mode---host) or to quit and return to the [main menu](#as-user).
