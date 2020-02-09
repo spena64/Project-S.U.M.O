@@ -6,6 +6,8 @@
 
 # Major Classes
 
+![Player Class Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/classDiagram.png)
+
 # Data Design
 
 ![Entity Relationship Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Entity%20Relationship%20Diagram.PNG)
