@@ -25,7 +25,7 @@
   * [Winner](#winner)
   * [Loser](#loser)
 
-- [UI/User Story Relation Chart](#ui/user-story-relation-chart)
+- [UI/User Story Relation Chart](#ui-relation-chart)
 
 ## Landing Page
 
@@ -153,7 +153,7 @@ This screen displays a message to the winner of the match. It also gives the opt
 This screen displays a message to the loser of the match. It also gives the option to rematch (which, if reciprocated, will place both players back into [character selection](#character-select)), start a new game (which will place the player back into the [matchmaking queue](#in-queue)]), or return to the [main menu](#as-user). This screen is specific to public matches in classic mode. For private lobbies and public tournaments, it would display the loser message and then present the option to return to the lobby ([tournament](#tournament-mode---host) or [classic](#classic-mode---host)) or to quit and return to the [main menu](#as-user).
 
 
-## UI/User Story Relation Chart
+## UI Relation Chart
 
 | User Story ID | User Story | UI Screen | Relation |
 |---------------|------------|-----------|----------|
@@ -168,5 +168,5 @@ This screen displays a message to the loser of the match. It also gives the opti
 | EP-2-2 - EP-2-5 | Room Host Privileges | [Classic Mode - Host](#classic-mode---host) / [Tournament Mode - Host](#tournament-mode---host) | All room host privileges are accessible as a room host in any private lobby. |
 | EP-3 | Tournament Brackets | [Tournament Mode - Host](#tournament-mode---host) / [Tournament Mode - Non-Host](#tournament-mode---non-host) | Tournament lobbies create tournament brackets and display tournament information to players. |
 | EP-4 | Character Selection | [Character Select](#character-select) | The character select page allows players to scroll through different characters, view stat differences, and choose a character that fits their desired playstyle. |
-| EP-5 | Audio | [Home Page](#home-page) / TO DO | The header bar (first shown on the home page and accessible from every subsequent screen) displays the "Game Settings" option, which will allow the user to change audio settings. |
+| EP-5 | Audio | [Home Page](#home-page) / TODO | The header bar (first shown on the home page and accessible from every subsequent screen) displays the "Game Settings" option, which will allow the user to change audio settings. |
 
