@@ -12,9 +12,17 @@
 
 # Business Rules
 
+- Terms and Services
+    - [Terms of Service for Firebase Services](https://cloud.google.com/terms/)
+    - [Google APIs Terms of Service](https://developers.google.com/terms/)
+    - [Firebase Data Processing and Security Terms](https://firebase.google.com/terms/data-processing-terms)
+
+- Guidelines
+    - [Firebase Logo Guidelines](https://firebase.google.com/brand-guidelines)
+
 # User Interface Design
 
-[Wireframe Mockups](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20wireframes.md)
+[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/drafts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/) 
 
 # Resource Management
 
@@ -39,6 +47,10 @@
 # Overengineering
 
 # Build-vs-Buy Decisions
+
+- Third Party Libraries
+    - Firebase JavaScript SDK
+    - Firebase Tools
 
 # Reuse
 
