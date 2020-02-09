@@ -1,5 +1,9 @@
 # Program Organization
 
+![Context Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_SystemContext.PNG)
+![Container Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_Container.PNG)
+![Component Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_ComponentGameApp.PNG)
+
 # Major Classes
 
 # Data Design
