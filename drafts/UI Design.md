@@ -24,7 +24,6 @@
 - [Game Space](#game-space)
   * [Winner](#winner)
   * [Loser](#loser)
-
 - [UI/User Story Relation Chart](#ui-relation-chart)
 
 ## Landing Page
