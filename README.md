@@ -39,7 +39,7 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
 - [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=534277414)
-- [Requirements](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/requirements.md)
+- [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=1857664409)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
