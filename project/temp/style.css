@@ -1,0 +1,72 @@
+body 
+{
+    background: #fff;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Oxygen', 'Verdana', sans-serif;
+    font-size: 16px;
+  }
+
+  input, button 
+  {
+    font-family: 'Oxygen', 'Verdana', sans-serif;
+    font-weight: 700;
+  }
+
+  .main, .logo
+  {
+    position: relative; 
+    text-align: center; 
+    font-family: 'Oxygen', 'Verdana', sans-serif;
+    top: 20%; 
+  }
+
+  .main, .loggedin-div
+  {
+    width: 20%;
+    margin: 0px auto;
+    margin-top: auto;
+    padding: 20px;
+  }
+  
+  .main input 
+  {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+
+  .main input:focus
+  {
+    border: 1px solid 777;
+  }
+  .main button, .loggedin button
+  {
+    background: #5d8ffc;
+    color: #fff;
+    border: 1px solid #5d8ffc;
+    border-radius: 5px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    margin-top: 15px; 
+  }
+
+  .main button:hover, .loggedin button
+  {
+    background: #fff;
+    color: #5d8ffc;
+    border: 1px solid #5d8ffc;
+    cursor: pointer;
+  }

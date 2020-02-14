@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Project Sumo Login</title>
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+        
+        <!-- Firebase scripts -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+
+        <script src="index.js"> </script>
+    </head>
+
+    <body>
+        <div id="logo" class="main">
+            <h1>Project S.U.M.O</h1>
+        </div>
+        <div id="login" class="main">
+
+            <input type = "email" placeholder = "Email..." id = "email_field" />
+            <input type = "password" placeholder = "Password..." id = "password_field" />
+
+            <!-- 
+            <button onclick="signUp()" id="signUp"> Sign Up </button>
+            <button onclick="signIn()" id="signIn"> Sign In </button>
+            <button onclick="signOut()" id="signOut"> Sign Out </button>
+            -->
+
+            <button onclick="login()">Log in to Account</button>
+        </div>
+
+
+    </body>
+
+</html>
+
