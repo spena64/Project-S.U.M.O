@@ -46,6 +46,8 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 - Design Documents
   - [Event Storming](https://miro.com/app/board/o9J_kvGTt2E=/)
   - [System Architecture](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md)
-  - [Class Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md)
-  - Sequence Diagrams
+  - [Class Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md#major-classes)
+  - [Sequence Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md#major-classes)
+- [Source Code](https://github.com/spena64/Project-S.U.M.O/tree/master/project/src)
+- [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
 - [Product Demonstration](https://youtu.be/CkVYZZV8Xr0)
