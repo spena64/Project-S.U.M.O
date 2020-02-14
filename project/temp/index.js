@@ -21,8 +21,9 @@
   {
       var email = document.getElementById("email_field");
       var pass = document.getElementById("password_field");
+      var nickname = document.getElementID("nickname_field"); 
 
-      //TODO: steven set up database so it can create account/handle errors 
+      // TODO: steven - set up database so it can create account/handle errors 
       if(document.getElementById("password_field") == document.getElementById("password_confirm_field")) 
       {
         const promise = auth.createUserWithEmailAndPassword(email_field.value, password_field.value);
@@ -30,7 +31,8 @@
 
         alert("Sign up complete!");
 
-        // yeet user to home page 
+        // yeet user to home page
+        window.location.href = 'login.html';
       }
   }
       
@@ -41,10 +43,11 @@
         
         const promise = auth.signInWithEmailAndPassword(email_field.value, password_field.value);
         promise.catch(e => alert(e.message));
-  
-
-        //take user to a different or home page 
+   
         alert("Successfully logged in"); 
+
+        // yeet user to home page
+        window.location.href = 'home-page.html';
     }
 
     function signOut()
@@ -55,7 +58,14 @@
 
     function continueGuest()
     {
-        
+        window.location.href = 'home-page.html';
+        // TODO: steven - figure out what to do with the guests in the database 
+        alert("alert~");
+        var nickname = document.getElementID("nickname_field"); 
+
+        // yeet user to home page 
+        alert("Welcome, " + nickname + "!!"); 
+        window.location.href = 'home-page.html';
     }
 
     auth.onAuthStateChanged(function(user)
@@ -64,11 +74,11 @@
         {
             var email = user.email;
             alert("Active User " + email);
-            //is signed in
+            // is signed in
         }
         else
         {
             alert("No Active User");
-            //no user is signed in
+            // no user is signed in
         }
     });
