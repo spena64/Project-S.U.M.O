@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Continue as Guest</title>
         <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css" />
         
@@ -18,8 +18,9 @@
         </div>
         <div id="login" class="main">
 
-            <input type = "email" placeholder = "Email..." id = "email_field" />
-            <input type = "password" placeholder = "Password..." id = "password_field" />
+            <p>By continuing as a guest, your stats and match history will NOT be saved.</p>
+            <br />
+            <input type = "nickname" placeholder = "Nickname..." id = "nickname_field" />
 
             <!-- 
             <button onclick="signUp()" id="signUp"> Sign Up </button>
@@ -27,11 +28,10 @@
             <button onclick="signOut()" id="signOut"> Sign Out </button>
             -->
 
-            <button onclick="login()">Log in to Account</button>
+            <button onclick="login()">Continue as Guest</button>
         </div>
 
 
     </body>
 
 </html>
-

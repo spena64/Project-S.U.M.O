@@ -21,13 +21,17 @@
   {
       var email = document.getElementById("email_field");
       var pass = document.getElementById("password_field");
-      
-      const promise = auth.createUserWithEmailAndPassword(email_field.value, password_field.value);
-      promise.catch(e => alert(e.message));
 
-      alert("Sign up complete!");
+      //TODO: steven set up database so it can create account/handle errors 
+      if(document.getElementById("password_field") == document.getElementById("password_confirm_field")) 
+      {
+        const promise = auth.createUserWithEmailAndPassword(email_field.value, password_field.value);
+        promise.catch(e => alert(e.message));
 
-      // yeet user to home page 
+        alert("Sign up complete!");
+
+        // yeet user to home page 
+      }
   }
       
     function login()
@@ -49,6 +53,10 @@
         alert("Signed Out");
     }
 
+    function continueGuest()
+    {
+        
+    }
 
     auth.onAuthStateChanged(function(user)
     {

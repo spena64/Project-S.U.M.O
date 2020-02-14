@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Create an Account</title>
         <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css" />
         
@@ -19,7 +19,10 @@
         <div id="login" class="main">
 
             <input type = "email" placeholder = "Email..." id = "email_field" />
+            <!-- TODO: steven links nickname to database -->
+            <input type = "nickname" placeholder = "Nickname..." id = "nickname_field" />
             <input type = "password" placeholder = "Password..." id = "password_field" />
+            <input type = "confirmPassword" placeholder = "Confirm password..." id = "password_confirm_field" />
 
             <!-- 
             <button onclick="signUp()" id="signUp"> Sign Up </button>
@@ -27,7 +30,7 @@
             <button onclick="signOut()" id="signOut"> Sign Out </button>
             -->
 
-            <button onclick="login()">Log in to Account</button>
+            <button onclick="createAccount()">Create an Account</button>
         </div>
 
 
