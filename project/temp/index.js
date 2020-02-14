@@ -58,27 +58,24 @@
 
     function continueGuest()
     {
-        window.location.href = 'home-page.html';
         // TODO: steven - figure out what to do with the guests in the database 
-        alert("alert~");
-        var nickname = document.getElementID("nickname_field"); 
 
         // yeet user to home page 
-        alert("Welcome, " + nickname + "!!"); 
+        alert("Welcome, " + nickname_field.value + "!!"); 
         window.location.href = 'home-page.html';
     }
 
-    auth.onAuthStateChanged(function(user)
-    {
-        if(user)
-        {
-            var email = user.email;
-            alert("Active User " + email);
-            // is signed in
-        }
-        else
-        {
-            alert("No Active User");
-            // no user is signed in
-        }
-    });
+    // auth.onAuthStateChanged(function(user)
+    // {
+    //     if(user)
+    //     {
+    //         var email = user.email;
+    //         alert("Active User " + email);
+    //         // is signed in
+    //     }
+    //     else
+    //     {
+    //         alert("No Active User");
+    //         // no user is signed in
+    //     }
+    // });
