@@ -3,22 +3,35 @@
   { 
     var email = document.getElementById("email_field");
     var pass = document.getElementById("password_field");
+    var cpass = document.getElementById("cpassword");
     var firebaseRef = firebase.database().ref("Users");
     
-    const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
-    promise.catch(e => alert(e.message));
-
-    firebaseRef.push(
+    if (email.value != "" && pass.value != "" && cpass.value != "")
     {
-      email: document.getElementById("email_field").value,
-      password: document.getElementById("password_field").value,
-      nickname: document.getElementById("nickname_field").value
-    });
+      if (pass.value == cpass.value)
+      {
+        firebaseRef.push(
+        {
+          email: document.getElementById("email_field").value,
+          password: document.getElementById("password_field").value,
+          nickname: document.getElementById("nickname_field").value
+        });
+      
+        const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
+        promise.catch(e => alert(e.message));
 
-    alert("Welcome, " + nickname_field.value + "!");
-    window.location.href = 'login.html';
+        alert("Welcome, " + nickname_field.value + "!");
+        window.location.href = 'login.html';
+      }
+
+      else  
+        window.alert("Passwords do not match!");
+    }
+
+    else
+      window.alert("Signup is incomplete!");
   }
-  
+
     function login()
     {
       var email = document.getElementById("email_field");
