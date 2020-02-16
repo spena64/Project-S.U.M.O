@@ -13,7 +13,7 @@
         {
           email: document.getElementById("email_field").value,
           password: document.getElementById("password_field").value,
-          // nickname: document.getElementById("nickname_field").value
+          nickname: document.getElementById("nickname_field").value
         });
 
       alert("Signed Up");
