@@ -1,67 +1,44 @@
   
-
   function createAccount()
   { 
-      var email = document.getElementById("email_field");
-      var pass = document.getElementById("password_field");
-      var firebaseRef = firebase.database().ref("Users");
-      
-      const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
-      promise.catch(e => alert(e.message));
-      
-      firebaseRef.push(
-        {
-          email: document.getElementById("email_field").value,
-          password: document.getElementById("password_field").value,
-          nickname: document.getElementById("nickname_field").value
-        });
+    var email = document.getElementById("email_field");
+    var pass = document.getElementById("password_field");
+    var firebaseRef = firebase.database().ref("Users");
+    
+    const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
+    promise.catch(e => alert(e.message));
 
-      alert("Signed Up");
+    firebaseRef.push(
+    {
+      email: document.getElementById("email_field").value,
+      password: document.getElementById("password_field").value,
+      nickname: document.getElementById("nickname_field").value
+    });
 
-        // yeet user to login page
-        window.location.href = 'login.html';
+    alert("Welcome, " + nickname_field.value + "!");
+    window.location.href = 'login.html';
   }
   
     function login()
     {
-        var email = document.getElementById("email_field");
-        var pass = document.getElementById("password_field");
-        
-        const promise = auth.signInWithEmailAndPassword(email_field.value, password_field.value);
-        promise.catch(e => alert(e.message));
-   
-        alert("Successfully logged in"); 
-
-        // yeet user to home page
-        window.location.href = 'home-page.html';
+      var email = document.getElementById("email_field");
+      var pass = document.getElementById("password_field");
+      
+      const promise = auth.signInWithEmailAndPassword(email_field.value, password_field.value);
+      promise.catch(e => alert(e.message));
+  
+      alert("Successfully logged in"); 
+      window.location.href = 'home-page.html';
     }
 
     function signOut()
     {
-        auth.signOut();
-        alert("Signed Out");
+      auth.signOut();
+      alert("Signed Out");
     }
 
     function continueGuest()
     {
-        // TODO: steven - figure out what to do with the guests in the database 
-
-        // yeet user to home page 
-        alert("Welcome, " + nickname_field.value + "!!"); 
-        window.location.href = 'home-page.html';
+      alert("Welcome, " + nickname_field.value + "!!"); 
+      window.location.href = 'home-page.html';
     }
-
-    // auth.onAuthStateChanged(function(user)
-    // {
-    //     if(user)
-    //     {
-    //         var email = user.email;
-    //         alert("Active User " + email);
-    //         // is signed in
-    //     }
-    //     else
-    //     {
-    //         alert("No Active User");
-    //         // no user is signed in
-    //     }
-    // });
