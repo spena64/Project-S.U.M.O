@@ -18,7 +18,7 @@
 
       alert("Signed Up");
 
-        // yeet user to home page
+        // yeet user to login page
         window.location.href = 'login.html';
   }
   
