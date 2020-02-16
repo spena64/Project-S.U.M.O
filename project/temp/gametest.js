@@ -8,6 +8,7 @@ const movement = {
 // Track player locations
 let players = {};
 
+// Listeners for keyboard input
 document.addEventListener('keydown', function(event) {
 	switch (event.keyCode) {
 		case 65: // A
@@ -40,29 +41,37 @@ document.addEventListener('keyup', function(event) {
 			break;
 	}
 });
-// Alert server of new player connection
-const socket = new WebSocket("ws://localhost:8080/game");
-var data = {
-    type: "newConnection",
+
+// Establish websocket connection
+const ws = new WebSocket("ws://" + location.host + "/game");
+ws.onopen = function() {
+    console.log("WebSocket connected.");
+    var data = {
+        type: "newConnection",
+    }
+    ws.send(data);
+    setInterval(sendInput, 1000 / 60);
 }
-socket.send(data);
+
 // Keep server updated with player input
-setInterval(function() {
+sendInput = function() {
     var data = {
         type: "gameInput",
         body: movement,
     }
-    socket.send(data);
-}, 1000 / 60);
+    ws.send(data);
+};
 
 // Receive game state from server
-socket.onmessage = function(event) {
+ws.onmessage = function(event) {
     var msg = JSON.parse(event.data);
 
     if (msg.type == "gameState") {
         players = msg.body;
     }
 };
+
+
 // Draw game state
 const canvas = document.getElementById('canvas');
 canvas.width = 800;
