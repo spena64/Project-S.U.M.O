@@ -38,7 +38,7 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 ## Sprint 3
 
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
-- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=534277414)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1973121715)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=1857664409)
@@ -50,4 +50,5 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
   - [Sequence Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md#major-classes)
 - [Source Code](https://github.com/spena64/Project-S.U.M.O/tree/master/project/src)
 - [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
+- [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
 - [Product Demonstration](https://youtu.be/CkVYZZV8Xr0)
