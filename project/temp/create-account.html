@@ -6,29 +6,46 @@
         
         <!-- Firebase scripts -->
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
 
-        <script src="index.js"> </script>
     </head>
 
     <body>
         <div id="logo" class="main">
             <h1>Project S.U.M.O</h1>
         </div>
-        <div id="login" class="main">
+        <div id="login">
 
-            <input type = "email" placeholder = "Email..." id = "email_field" />
+            <input type = "email" placeholder = "Email..." id = "email" />
             <!-- TODO: steven links nickname to database -->
-            <input type = "nickname" placeholder = "Nickname..." id = "nickname_field" />
-            <input type = "password" placeholder = "Password..." id = "password_field" />
-            <input type = "confirmPassword" placeholder = "Confirm password..." id = "password_confirm_field" />
+            <input type = "nickname" placeholder = "Nickname..." id = "nickname" />
+            <input type = "password" placeholder = "Password..." id = "password" />
+            <input type = "confirmPassword" placeholder = "Confirm password..." id = "passwordConfirm" />
 
-            <button onclick="createAccount()">Create an Account</button>
+            <button onclick="signUp()">Create an Account</button>
             <button onclick="window.location.href='landing_page.html'" id = "back">Back</button>
         </div>
 
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyAOk918OH35Ie5dx62O6HX4KmaSLn58cHQ",
+              authDomain: "project-sumo-e6f87.firebaseapp.com",
+              databaseURL: "https://project-sumo-e6f87.firebaseio.com",
+              projectId: "project-sumo-e6f87",
+              storageBucket: "project-sumo-e6f87.appspot.com",
+              messagingSenderId: "548557512640",
+              appId: "1:548557512640:web:2913ecd0b8c1ba3a24b225",
+              measurementId: "G-W9VE8EX4DC"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const database = firebase.database();
+            const auth = firebase.auth();
+          </script>
 
+           <script src="index.js"> </script>
     </body>
 
 </html>

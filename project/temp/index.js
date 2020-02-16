@@ -1,41 +1,26 @@
   
-  // Your web app's Firebase configuration
-  var firebaseConfig = 
-  {
-    apiKey: "AIzaSyAOk918OH35Ie5dx62O6HX4KmaSLn58cHQ",
-    authDomain: "project-sumo-e6f87.firebaseapp.com",
-    databaseURL: "https://project-sumo-e6f87.firebaseio.com",
-    projectId: "project-sumo-e6f87",
-    storageBucket: "project-sumo-e6f87.appspot.com",
-    messagingSenderId: "548557512640",
-    appId: "1:548557512640:web:2913ecd0b8c1ba3a24b225",
-    measurementId: "G-W9VE8EX4DC"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-  const auth = firebase.auth();
 
   function createAccount()
   {
+      //var nickname = document.getElementById("nickname_field"); 
       var email = document.getElementById("email_field");
       var pass = document.getElementById("password_field");
-      var nickname = document.getElementID("nickname_field"); 
+      
+      const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
+      promise.catch(e => alert(e.message));
+      
+      firebase.database().ref("Users").child("User").set(
+        {
+          email: document.getElementById("email_field").value,
+          password: document.getElementById("password_field").value
+        });
 
-      // TODO: steven - set up database so it can create account/handle errors 
-      if(document.getElementById("password_field") == document.getElementById("password_confirm_field")) 
-      {
-        const promise = auth.createUserWithEmailAndPassword(email_field.value, password_field.value);
-        promise.catch(e => alert(e.message));
-
-        alert("Sign up complete!");
+      alert("Signed Up");
 
         // yeet user to home page
         window.location.href = 'login.html';
-      }
   }
-      
+  
     function login()
     {
         var email = document.getElementById("email_field");
