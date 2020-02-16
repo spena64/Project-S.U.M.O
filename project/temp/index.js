@@ -1,18 +1,19 @@
   
 
   function createAccount()
-  {
-      //var nickname = document.getElementById("nickname_field"); 
+  { 
       var email = document.getElementById("email_field");
       var pass = document.getElementById("password_field");
+      var firebaseRef = firebase.database().ref("Users");
       
       const promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
       promise.catch(e => alert(e.message));
       
-      firebase.database().ref("Users").child("User").set(
+      firebaseRef.push(
         {
           email: document.getElementById("email_field").value,
-          password: document.getElementById("password_field").value
+          password: document.getElementById("password_field").value,
+          // nickname: document.getElementById("nickname_field").value
         });
 
       alert("Signed Up");
