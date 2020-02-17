@@ -43,13 +43,13 @@ document.addEventListener('keyup', function(event) {
 });
 
 // Establish websocket connection
-const ws = new WebSocket("ws://" + location.host + "/game");
+const ws = new WebSocket("ws://" + location.host + "/socketserver");
 ws.onopen = function() {
     console.log("WebSocket connected.");
     var data = {
         type: "newConnection",
     }
-    ws.send(data);
+    ws.send(JSON.stringify(data));
     setInterval(sendInput, 1000 / 60);
 }
 
@@ -59,13 +59,16 @@ sendInput = function() {
         type: "gameInput",
         body: movement,
     }
-    ws.send(data);
+    ws.send(JSON.stringify(data));
 };
 
 // Receive game state from server
 ws.onmessage = function(event) {
     var msg = JSON.parse(event.data);
 
+    if (msg.type == "test") {
+        console.log(msg.body);
+    }
     if (msg.type == "gameState") {
         players = msg.body;
     }
