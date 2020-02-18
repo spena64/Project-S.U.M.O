@@ -26,7 +26,7 @@ function createAccount()
 
       alert("Welcome, " + nickname.value + "!");
       // NEED TO MAKE IT SO THAT THE BUTTON WILL GO TO LOGIN PAGE AFTERWARDS WILE ALSO SAVING IN THE AUTHENTICATION TOKEN
-      // set 3000 milliseconds before redirecting 
+      // set 100 milliseconds before redirecting 
       setTimeout(redirect, 100);
     }
       else  
