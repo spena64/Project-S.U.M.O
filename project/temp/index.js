@@ -10,11 +10,13 @@ function createAccount()
   
   if (email.value != "" && pass.value != "" && cpass.value != "")
   {
-    var promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
-    promise.catch(e => alert(e.message));
+    
 
     if (pass.value == cpass.value)
     {
+      var promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
+      promise.catch(e => alert(e.message));
+
       firebaseRef.push(
       {
         email: email.value,
@@ -24,7 +26,8 @@ function createAccount()
 
       alert("Welcome, " + nickname.value + "!");
       // NEED TO MAKE IT SO THAT THE BUTTON WILL GO TO LOGIN PAGE AFTERWARDS WILE ALSO SAVING IN THE AUTHENTICATION TOKEN
-      window.location.href = 'login.html';
+      // set 3000 milliseconds before redirecting 
+      setTimeout(redirect, 100);
     }
       else  
         window.alert("Passwords do not match!");
@@ -33,6 +36,9 @@ function createAccount()
       window.alert("Signup is incomplete!");
   }
 
+  function redirect() {
+    window.location.href = 'login.html';
+  }
 
   function login()
   {   
