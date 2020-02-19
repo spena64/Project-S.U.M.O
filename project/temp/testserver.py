@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from os import curdir, sep
 import socketserver
-import websocket
 import json
 import threading
 
@@ -41,36 +40,7 @@ class requestHandler(BaseHTTPRequestHandler):
         except IOError:
             self.send_error(404, f"File Not Found: {self.path}")
 
-# WebSocket
-def on_message(ws, message):
-    msg = json.loads(message)
-
-    if (msg["type"] == "newConnection"):
-        # Create new match
-
-        outMsg = json.dumps({
-            "type": "test",
-            "body": "Connected."
-        })
-        ws.send(outMsg)
-    if (msg["type"] == "gameInput"):
-        # Relay input
-        return
-
-def on_error(ws, error):
-    print(error)
-
-def on_close(ws):
-    print("Websocket closed.")
-
-def start_ws():
-    websocket.enableTrace(True)
-    ws = websocket.WebSocketApp("ws://localhost:8080/socketserver", on_message = on_message, on_error=on_error, on_close=on_close)
-    ws.run_forever()
-
 # Start server
 with HTTPServer(("", PORT), requestHandler) as server:
-    wsThread = threading.Thread(target=start_ws)
-    wsThread.start()
     print("serving at port", PORT)
     server.serve_forever()

@@ -43,7 +43,7 @@ document.addEventListener('keyup', function(event) {
 });
 
 // Establish websocket connection
-const ws = new WebSocket("ws://" + location.host + "/socketserver");
+const ws = new WebSocket("ws://localhost:8081/");
 ws.onopen = function() {
     console.log("WebSocket connected.");
     var data = {
@@ -64,7 +64,7 @@ sendInput = function() {
 
 // Receive game state from server
 ws.onmessage = function(event) {
-    var msg = JSON.parse(event.data);
+	var msg = JSON.parse(event.data);
 
     if (msg.type == "test") {
         console.log(msg.body);
