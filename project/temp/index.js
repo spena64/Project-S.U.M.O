@@ -69,8 +69,12 @@ function createAccount()
 
   function continueGuest()
   {
-    alert("Welcome, " + nickname.value + "!!"); 
-    window.location.href = 'home-page.html';
+    if (nickname.value != "") {
+      alert("Welcome, " + nickname.value + "!"); 
+      window.location.href = 'home-page.html';
+    }
+    else
+      window.alert("Please enter a nickname!"); 
   }
 
   // firebase.auth().onAuthStateChanged(firebaseUser => {
