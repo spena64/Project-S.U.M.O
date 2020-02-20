@@ -2,7 +2,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from os import curdir, sep
 import socketserver
 import json
-import threading
 
 PORT = 8080
 

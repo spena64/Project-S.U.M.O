@@ -44,8 +44,11 @@ document.addEventListener('keyup', function(event) {
 
 // Establish websocket connection
 const ws = new WebSocket("ws://localhost:8081/");
+let socketOpen = false;
+
 ws.onopen = function() {
     console.log("WebSocket connected.");
+    socketOpen = true;
     var data = {
         type: "newConnection",
     }
@@ -55,18 +58,20 @@ ws.onopen = function() {
 
 // Keep server updated with player input
 sendInput = function() {
-    var data = {
-        type: "gameInput",
-        body: movement,
+    if (socketOpen) {
+        var data = {
+            type: "gameInput",
+            body: movement,
+        }
+        ws.send(JSON.stringify(data));
     }
-    ws.send(JSON.stringify(data));
 };
 
-// Receive game state from server
+// Receive info from server
 ws.onmessage = function(event) {
 	var msg = JSON.parse(event.data);
 
-    if (msg.type == "test") {
+    if (msg.type == "info") {
         console.log(msg.body);
     }
     if (msg.type == "gameState") {
@@ -74,6 +79,15 @@ ws.onmessage = function(event) {
     }
 };
 
+ws.onclose = function() {
+    socketOpen = false;
+    console.log("Connection closed.")
+};
+
+// Start match
+document.getElementById('startbutton').onclick = function(){
+    ws.send(JSON.stringify({type: "startMatch"}));
+};
 
 // Draw game state
 const canvas = document.getElementById('canvas');
