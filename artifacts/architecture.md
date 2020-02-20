@@ -35,6 +35,7 @@ This image is a visulaization of our major class diagram. In the diagram we have
 # Scalability
 
 # Interoperability
+We plan to use a Firebase database where user data will be stored 
 
 # Internationalization/Localization
 
