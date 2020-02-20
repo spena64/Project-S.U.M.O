@@ -3,18 +3,15 @@ const pass = document.getElementById("password_field");
 const cpass = document.getElementById("cpassword");
 const nickname = document.getElementById("nickname_field");
 
-function createAccount()
+async function createAccount()
 { 
   var firebaseRef = firebase.database().ref("Users");
   
   if (email.value != "" && pass.value != "" && cpass.value != "")
   {
-    
-
     if (pass.value == cpass.value)
     {
-      var promise = auth.createUserWithEmailAndPassword(email.value, pass.value);
-      promise.catch(e => alert(e.message));
+      await auth.createUserWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
 
       firebaseRef.push(
       {
@@ -24,9 +21,8 @@ function createAccount()
       });
 
       alert("Welcome, " + nickname.value + "!");
-      // NEED TO MAKE IT SO THAT THE BUTTON WILL GO TO LOGIN PAGE AFTERWARDS WILE ALSO SAVING IN THE AUTHENTICATION TOKEN
-      // wait 300 milliseconds before redirecting 
-      setTimeout(redirectToLogin, 300);
+
+      window.location.href = 'login.html'; 
     }
       else  
         window.alert("Passwords do not match!");
@@ -35,24 +31,19 @@ function createAccount()
       window.alert("Signup is incomplete!");
   }
 
-  function redirectToLogin() 
-  {
-    window.location.href = 'login.html';
-  }
-
-  function login()
+  async function login()
   {   
     if (email.value != "" && pass.value != "")
     {
-      const promise = auth.signInWithEmailAndPassword(email.value, pass.value);
-      promise.catch(e => alert(e.message));
+      await auth.signInWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
 
       firebase.auth().onAuthStateChanged(function(currentUser) 
       {
         if (currentUser && !currentUser.isAnonymous)
         {
+          console.log(currentUser); 
           // TODO: figure out why nickname shows up as undefined 
-          alert("Successfully logged in " + currentUser.nickname + "!"); 
+          alert("Successfully logged in " + currentUser.email + "!"); 
           window.location.href = 'home-page.html';
         }
       }); 
@@ -64,7 +55,7 @@ function createAccount()
   function signOut()
   {
     auth.signOut();
-    alert("Signed Out");
+    alert("Signed out!");
   }
 
   function continueGuest()
