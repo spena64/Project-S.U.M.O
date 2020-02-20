@@ -1,4 +1,5 @@
 import time
+import math
 
 class Match:
     def __init__(self):
@@ -31,8 +32,17 @@ class Match:
         return playerData
 
     def setPlayerInput(self, userId, inputX, inputY):
-        self.playerDict[userId].setDirection(inputX, inputY)
+        directionVector = self.normalizeInput(inputX, inputY)
+        self.playerDict[userId].setDirection(directionVector)
+        print(directionVector)
         return
+
+    def normalizeInput(self, x, y):
+        magnitude = math.sqrt(x ** 2 + y ** 2)
+        if (magnitude == 0):
+            return [0, 0]
+        
+        return [x / magnitude, y / magnitude]
     
 class Player:
     def __init__(self, position, accelerationRate, radius, mass):
@@ -68,9 +78,8 @@ class Player:
 
         return
 
-    def setDirection(self, inputX, inputY):
-        self.direction[0] = inputX
-        self.direction[1] = inputY
+    def setDirection(self, directionVector):
+        self.direction = directionVector
         return
 
     def checkCollision(self):
