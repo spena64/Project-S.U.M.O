@@ -52,7 +52,7 @@ async function createAccount()
       window.alert("Email and password required!");
   }
 
-  function signOut()
+  function signOut() 
   {
     auth.signOut();
     alert("Signed out!");
