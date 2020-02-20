@@ -11,15 +11,19 @@ let players = {};
 // Listeners for keyboard input
 document.addEventListener('keydown', function(event) {
 	switch (event.keyCode) {
+		case 37: // Left arrow
 		case 65: // A
 			movement.left = true;
 			break;
+		case 38: // Up arrow
 		case 87: // W
 			movement.up = true;
 			break;
+		case 39: // Right arrow
 		case 68: // D
 			movement.right = true;
 			break;
+		case 40: // Down arrow
 		case 83: // S
 			movement.down = true;
 			break;
@@ -27,15 +31,19 @@ document.addEventListener('keydown', function(event) {
 });
 document.addEventListener('keyup', function(event) {
 	switch (event.keyCode) {
+		case 37: // Left arrow
 		case 65: // A
 			movement.left = false;
 			break;
+		case 38: // Up arrow
 		case 87: // W
 			movement.up = false;
 			break;
+		case 39: // Right arrow
 		case 68: // D
 			movement.right = false;
 			break;
+		case 40: // Down arrow
 		case 83: // S
 			movement.down = false;
 			break;
