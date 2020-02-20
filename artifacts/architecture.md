@@ -7,7 +7,7 @@
 # Major Classes
 
 ![Player Class Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/classDiagram.png)
-
+This image is a visulaization of our major class diagram. In the diagram we have the Match class which creates cointains the players of the match. The player class has all the information about the players and then the playerSprite which has the information about the sprite.
 # Data Design
 
 ![Entity Relationship Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Entity%20Relationship%20Diagram.PNG)
