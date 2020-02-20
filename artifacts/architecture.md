@@ -30,14 +30,16 @@ This image is a visulaization of our major class diagram. In the diagram we have
 
 # Security
 
+
 # Performance
 
 # Scalability
 
 # Interoperability
-We will be using a Firebase database and storing data by client/server database system 
+We will be using a Firebase database and storing data by client/server database system
 
 # Internationalization/Localization
+Our product will not aim to reach international audience and plan to stay with the local language of English
 
 # Input/Output
 
