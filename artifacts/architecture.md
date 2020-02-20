@@ -24,7 +24,7 @@ This image is a visulaization of our major class diagram. In the diagram we have
 
 # User Interface Design
 
-[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/) 
+[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/)
 
 # Resource Management
 
@@ -35,7 +35,7 @@ This image is a visulaization of our major class diagram. In the diagram we have
 # Scalability
 
 # Interoperability
-We plan to use a Firebase database where user data will be stored 
+We will be using a Firebase database and storing data by client/server database system 
 
 # Internationalization/Localization
 
