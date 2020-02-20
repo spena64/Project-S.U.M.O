@@ -7,7 +7,7 @@
 # Major Classes
 
 ![Player Class Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/classDiagram.png)
-
+This image is a visulaization of our major class diagram. In the diagram we have the Match class which creates cointains the players of the match. The player class has all the information about the players and then the playerSprite which has the information about the sprite.
 # Data Design
 
 ![Entity Relationship Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Entity%20Relationship%20Diagram.PNG)
@@ -24,19 +24,22 @@
 
 # User Interface Design
 
-[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/) 
+[UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/)
 
 # Resource Management
 
 # Security
+Login information will be sanitized to prevent SQL injection.
 
 # Performance
 
 # Scalability
 
 # Interoperability
+We will be using a Firebase database and storing data by client/server database system
 
 # Internationalization/Localization
+Our product will not aim to reach international audience and plan to stay with the local language of English
 
 # Input/Output
 

@@ -13,10 +13,22 @@ class Match:
             for id in self.playerDict:
                 player = self.playerDict[id]
                 player.move()
+            time.sleep(0.01)
         return
 
-    def getPlayerLocation(self, userID):
-        return self.playerDict[userID].getPosition()
+    def getPlayerState(self, userID):
+        playerState = {
+            "x": self.playerDict[userID].getPosition()[0],
+            "y": self.playerDict[userID].getPosition()[1],
+            "radius": self.playerDict[userID].getRadius()
+        }
+        return playerState
+
+    def getPlayerData(self):
+        playerData = {}
+        for id in self.playerDict:
+            playerData[id] = self.getPlayerState(id)
+        return playerData
 
     def setPlayerInput(self, userId, inputX, inputY):
         self.playerDict[userId].setDirection(inputX, inputY)
@@ -30,6 +42,7 @@ class Player:
         self.accelerationRate = accelerationRate
         self.radius = radius
         self.mass = mass
+        self.drag = 1.01
     
     def getPosition(self):
         return self.position
@@ -43,6 +56,16 @@ class Player:
 
         self.position[0] += self.speed[0]
         self.position[1] += self.speed[1]
+
+        self.speed[0] /= self.drag
+        self.speed[1] /= self.drag
+
+        # Stopping speed
+        if (abs(self.speed[0]) < 0.1):
+            self.speed[0] = 0
+        if (abs(self.speed[1]) < 0.1):
+            self.speed[1] = 0
+
         return
 
     def setDirection(self, inputX, inputY):

@@ -1,0 +1,62 @@
+import asyncio
+import json
+import websockets
+import threading
+import match
+
+class GameServer:
+    def __init__(self):
+        self.PORT = 8081
+
+        self.testMatch = match.Match()
+        self.matchThread = threading.Thread(target=self.testMatch.runGameLoop, daemon=True)
+        self.isMatchStarted = False
+        print("Creating new game server.")
+
+    async def on_message(self, ws, path):
+        while(True):
+            message = await ws.recv()
+            message = json.loads(message)
+
+            if (message["type"] == "newConnection"):
+                if (self.isMatchStarted == False):
+                    self.testMatch.addPlayer(str(ws), [50, 50], 0.25, 30, 1)
+                    print("New connection at websocket " + str(ws))
+                    outMsg = json.dumps({
+                        "type": "info",
+                        "body": "Joined match."
+                    })
+                    await ws.send(outMsg)
+                else:
+                    outMsg = json.dumps({
+                        "type": "info",
+                        "body": "Match already started, cannot join."
+                    })
+                    await ws.send(outMsg)
+                    return
+            if (message["type"] == "startMatch"):
+                self.matchThread.start()
+                self.isMatchStarted = True
+                print("Started match.")
+            if (message["type"] == "gameInput"):
+                playerInputs = message["body"]
+                inputX = playerInputs["right"] - playerInputs["left"]
+                inputY = playerInputs["down"] - playerInputs["up"]
+                self.testMatch.setPlayerInput(str(ws), inputX, inputY)
+
+            # Send player data to client
+            outData = json.dumps({
+                "type": "gameState",
+                "body": self.testMatch.getPlayerData()
+            })
+            await ws.send(outData)
+
+    def start_game_server(self):
+        print("Starting server at port " + str(self.PORT))
+        start_server = websockets.serve(self.on_message, "localhost", self.PORT)
+
+        asyncio.get_event_loop().run_until_complete(start_server)
+        asyncio.get_event_loop().run_forever()
+
+testGameServer = GameServer()
+testGameServer.start_game_server()
