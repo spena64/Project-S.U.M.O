@@ -29,7 +29,7 @@ This image is a visulaization of our major class diagram. In the diagram we have
 # Resource Management
 
 # Security
-
+Login information will be sanitized to prevent SQL injection.
 
 # Performance
 
