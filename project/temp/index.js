@@ -58,10 +58,18 @@ async function createAccount()
     alert("Signed out!");
   }
 
-  function continueGuest()
+  async function continueGuest()
   {
-    if (nickname.value != "") {
+    if (nickname.value != "") 
+    {
+      await auth.signInAnonymously();
+
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+        console.log(firebaseUser);
+      });
+      
       alert("Welcome, " + nickname.value + "!"); 
+      
       window.location.href = 'home-page.html';
     }
     else
@@ -69,8 +77,5 @@ async function createAccount()
   }
 
   // firebase.auth().onAuthStateChanged(firebaseUser => {
-  //   if(firebaseUser)
-  //     console.log(firebaseUser);
-  //   else
-  //     console.log("not logged in");
+  //   console.log(firebaseUser);
   // });
