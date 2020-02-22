@@ -99,11 +99,16 @@ document.getElementById('startbutton').onclick = function(){
 
 // Draw game state
 const canvas = document.getElementById('canvas');
-canvas.width = 800;
-canvas.height = 600;
+canvas.width = 1000;
+canvas.height = 1000;
 const context = canvas.getContext('2d');
 setInterval(function() {
-	context.clearRect(0, 0, 800, 600);
+    context.clearRect(0, 0, 1000, 1000);
+    context.strokeStyle = 'red';
+    context.beginPath();
+    context.arc(500, 500, 450, 0, 2 * Math.PI);
+    context.stroke();
+
 	context.fillStyle = 'green';
 	for (let id in players) {
 		let player = players[id];
