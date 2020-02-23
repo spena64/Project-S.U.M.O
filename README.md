@@ -56,10 +56,10 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 ## Sprint 4
 
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
-- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1973121715)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1719866228)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
-- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=79556220)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=1837557507)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
 - Design Documents
   - [Event Storming](https://miro.com/app/board/o9J_kvGTt2E=/)
