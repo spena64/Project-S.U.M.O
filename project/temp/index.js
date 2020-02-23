@@ -62,18 +62,33 @@ async function createAccount()
   {
     if (nickname.value != "") 
     {
-      await auth.signInAnonymously();
-
-      firebase.auth().onAuthStateChanged(firebaseUser => {
+      if (isAlphanumeric(nickname)) 
+      {
+        await auth.signInAnonymously();
+        firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log(firebaseUser);
-      });
+        });
       
-      alert("Welcome, " + nickname.value + "!"); 
-      
-      window.location.href = 'home-page.html';
+        alert("Welcome, " + nickname.value + "!"); 
+        window.location.href = 'home-page.html';
+      }
+      else 
+      {
+        window.alert("Please enter an alphanumeric nickname!")
+      }
     }
     else
       window.alert("Please enter a nickname!"); 
+  }
+
+  function isAlphanumeric(str) 
+  {
+    var acceptableChars = /^[0-9a-zA-Z]+$/; 
+    if(str.value.match(acceptableChars))
+    {
+      return true;
+    }
+    return false; 
   }
 
   // firebase.auth().onAuthStateChanged(firebaseUser => {
