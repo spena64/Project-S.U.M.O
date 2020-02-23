@@ -7,26 +7,37 @@ async function createAccount()
 { 
   var firebaseRef = firebase.database().ref("Users");
   
-  if (email.value != "" && pass.value != "" && cpass.value != "")
+  if (email.value != "" && nickname.value != "" && pass.value != "" && cpass.value != "")
   {
-    if (pass.value == cpass.value)
+    if (isAlphanumeric(nickname)) 
     {
-      await auth.createUserWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
-
-      firebaseRef.push(
+      if (pass.value == cpass.value)
       {
-        email: email.value,
-        password: pass.value,
-        nickname: nickname.value
-      });
+        await auth.createUserWithEmailAndPassword(email.value, pass.value).catch(function(error) {
+          window.alert(error.message); 
+          var flag = false; 
+        });
+        
+        if(flag == false)
+        {
+          firebaseRef.push(
+          {
+            email: email.value,
+            password: pass.value,
+            nickname: nickname.value
+          });
 
-      alert("Welcome, " + nickname.value + "!");
+          alert("Welcome, " + nickname.value + "!");
 
-      window.location.href = 'login.html'; 
-    }
+          window.location.href = 'login.html'; 
+        }
+      }
       else  
         window.alert("Passwords do not match!");
     }
+    else 
+      window.alert("Nickname must be alphanumeric!");
+  }
     else
       window.alert("Signup is incomplete!");
   }
@@ -73,9 +84,7 @@ async function createAccount()
         window.location.href = 'home-page.html';
       }
       else 
-      {
-        window.alert("Please enter an alphanumeric nickname!")
-      }
+        window.alert("Nickname must be alphanumeric!");
     }
     else
       window.alert("Please enter a nickname!"); 
@@ -90,7 +99,3 @@ async function createAccount()
     }
     return false; 
   }
-
-  // firebase.auth().onAuthStateChanged(firebaseUser => {
-  //   console.log(firebaseUser);
-  // });
