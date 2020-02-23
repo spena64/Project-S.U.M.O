@@ -2,6 +2,7 @@ import asyncio
 import json
 import websockets
 import threading
+import concurrent.futures
 import match
 
 class GameServer:
@@ -20,7 +21,7 @@ class GameServer:
 
             if (message["type"] == "newConnection"):
                 if (self.isMatchStarted == False):
-                    self.testMatch.addPlayer(str(ws), [50, 50], 0.25, 30, 1)
+                    self.testMatch.addPlayer(str(ws), [400, 500], 0.25, 30, 1)
                     print("New connection at websocket " + str(ws))
                     outMsg = json.dumps({
                         "type": "info",
@@ -34,10 +35,10 @@ class GameServer:
                     })
                     await ws.send(outMsg)
                     return
-            if (message["type"] == "startMatch"):
-                self.matchThread.start()
+            if (message["type"] == "startMatch" and self.isMatchStarted == False):
                 self.isMatchStarted = True
                 print("Started match.")
+                self.matchThread.start()
             if (message["type"] == "gameInput"):
                 playerInputs = message["body"]
                 inputX = playerInputs["right"] - playerInputs["left"]
@@ -45,11 +46,17 @@ class GameServer:
                 self.testMatch.setPlayerInput(str(ws), inputX, inputY)
 
             # Send player data to client
-            outData = json.dumps({
+            outData = {
                 "type": "gameState",
+                "matchState": self.testMatch.getMatchData(),
                 "body": self.testMatch.getPlayerData()
-            })
-            await ws.send(outData)
+            }
+            if (outData["matchState"]["winner"] == str(ws)):
+                outData["matchState"]["youWin"] = True
+            await ws.send(json.dumps(outData))
+            
+            if (outData["matchState"]["state"] == "finished"):
+                break
 
     def start_game_server(self):
         print("Starting server at port " + str(self.PORT))

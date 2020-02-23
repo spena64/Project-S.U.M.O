@@ -1,21 +1,49 @@
 import time
 import math
 
+RING_CENTER_X = 500
+RING_CENTER_Y = 500
+RING_RADIUS = 450
+
 class Match:
     def __init__(self):
         self.playerDict = {}
+        self.state = "waiting"
+        self.winner = "Undecided"
 
     def addPlayer(self, userID, position, accelerationRate, radius, mass):
         self.playerDict[userID] = Player(position, accelerationRate, radius, mass)
 
     def runGameLoop(self):
         # Game loop
+        self.state = "started"
         while(True):
+            inRingNum = 0
             for id in self.playerDict:
                 player = self.playerDict[id]
                 player.move()
+                if (player.isInBounds()):
+                    inRingNum += 1
+            
+            if (inRingNum == 1):
+                break
             time.sleep(0.01)
-        return
+        self.endMatch()
+
+    def endMatch(self):
+        self.state = "finished"
+        for id in self.playerDict:
+            player = self.playerDict[id]
+            if (player.isInBounds()):
+                self.winner = id
+
+    def getMatchData(self):
+        matchData = {
+            "state": self.state,
+            "winner": self.winner,
+            "youWin": False
+        }
+        return matchData
 
     def getPlayerState(self, userID):
         playerState = {
@@ -34,7 +62,6 @@ class Match:
     def setPlayerInput(self, userId, inputX, inputY):
         directionVector = self.normalizeInput(inputX, inputY)
         self.playerDict[userId].setDirection(directionVector)
-        print(directionVector)
         return
 
     def normalizeInput(self, x, y):
@@ -53,6 +80,7 @@ class Player:
         self.radius = radius
         self.mass = mass
         self.drag = 1.01
+        self.isAlive = True
     
     def getPosition(self):
         return self.position
@@ -76,10 +104,15 @@ class Player:
         if (abs(self.speed[1]) < 0.1):
             self.speed[1] = 0
 
+        # Kill movement if out of bounds
+        self.isAlive = math.sqrt( (self.position[0] - RING_CENTER_X) ** 2 + (self.position[1] - RING_CENTER_Y) ** 2 ) < RING_RADIUS
+        if (self.isAlive == False):
+            self.direction = [0, 0]
         return
 
     def setDirection(self, directionVector):
-        self.direction = directionVector
+        if (self.isAlive == True):
+            self.direction = directionVector
         return
 
     def checkCollision(self):
@@ -89,5 +122,5 @@ class Player:
         return
 
     def isInBounds(self):
-        return True
+        return self.isAlive
 

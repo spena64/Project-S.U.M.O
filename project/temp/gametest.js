@@ -84,6 +84,14 @@ ws.onmessage = function(event) {
     }
     if (msg.type == "gameState") {
         players = msg.body;
+        
+        if (msg.matchState.state == "finished") {
+            if (msg.matchState.youWin == true) {
+                alert("You win!")
+            } else {
+                alert("You lost to " + msg.matchState.winner + "!");
+            }
+        }
     }
 };
 
