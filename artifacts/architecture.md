@@ -1,8 +1,15 @@
 # Program Organization
 
 ![Context Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_SystemContext.PNG)
+At the highest level, the system is simple, involving only the player (a human actor) and the game itself (our project). The game does not interact with any external third party systems.
 ![Container Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_Container.PNG)
+The game system can be broken up into several containers. The Web Application handles sending static content such as HTML to the player's web browser. This allows the player to access the site via HTTPS (User stories: US-0). The Browser Application refers to the front end scripts that are executed in the player's web browser and allow them to interact with the game and perform actions such as creating an account, logging in, searching for games, messaging other players, and moving their character (User stories: US-2, US-4, US-8, US-9, EP-1-1). The Game Application computes game events, responds to clients about the state of the game, and updates the Database with player scores (User stories: EP-1-2, EP-1-3, EP-2-1, EP-3-1). The Database stores information about each player's account credentials along with their game scores.
 ![Component Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_ComponentGameApp.PNG)
+The Game Application is made of several components. The Matchmaking System allows players to queue for matches (User stories: US-4, EP-1-3). The Lobby System creates a separate game instance for each group of players and provides chat functions (User stories: US-2, US-7, EP-2-1, EP-2-2, EP-2-3, EP-2-4, EP-2-5, EP-3-1, EP-3-2, EP-3-3, EP-3-4). The Gameplay Component manages game logic such as movement, collisions, and win / lose states (User stories: EP-1-1, EP-1-2, EP-1-3). The Scoreboard System records each player's score in the Database at the conclusion of each match.
+![Component Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_ComponentWebApp.PNG)
+The Web Application has several components. The Sign-In Controller manages sign-in requests and accesses user account credentials from the Database (User stories: US-8, US-9). The Player Score Controller accesses information about personal and global game scores from the Database to create a leaderboard page for the user to view (User stories: US-9).
+![Component Diagram](https://github.com/spena64/Project-S.U.M.O/blob/master/images/Arch_ComponentBrowserApp.PNG)
+The Browser Application has several components. The Login Page allows the user to log in to their account or create a new account (User stories: US-8, US-9). The User Profile Page allows the user to view their account information (User stories: US-9). The Home Page provides the user with a central menu for them to navigate the site and queue for or create games (User stories: US-4, US-5, EP-2-1, EP-2-2, EP-3-1). The Game Page is a single-page application that provies an interface between the player and the game session (User stories: US-2, US-6, US-7, EP-1-1, EP-2-3, EP-2-4, EP-2-5, EP-3-3, EP-3-4, EP-4-1, EP-4-2).
 
 # Major Classes
 
