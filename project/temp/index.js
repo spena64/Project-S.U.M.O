@@ -13,12 +13,16 @@ async function createAccount()
     {
       if (pass.value == cpass.value)
       {
-        await auth.createUserWithEmailAndPassword(email.value, pass.value).catch(function(error) {
+        var flag;
+        await auth.createUserWithEmailAndPassword(email.value, pass.value).then(function(user) {
+          flag = true; 
+        })
+        .catch(function(error) {
           window.alert(error.message); 
-          var flag = false; 
+          flag = false; 
         });
         
-        if(flag == false)
+        if(flag)
         {
           firebaseRef.push(
           {
