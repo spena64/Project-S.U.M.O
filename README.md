@@ -70,6 +70,6 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 - [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
 - [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
 - Product Demonstration
-    -[Website Portion](https://www.youtube.com/watch?v=l7IL7vkGsAI)
-    -[Game Portion](https://www.youtube.com/watch?v=M3Y8wHI_S7U)
+    - [Website Portion](https://www.youtube.com/watch?v=l7IL7vkGsAI)
+    - [Game Portion](https://www.youtube.com/watch?v=M3Y8wHI_S7U)
     
