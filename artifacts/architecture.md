@@ -12,8 +12,8 @@
 - [Performance](#performance)
 - [Scalability](#scalability)
 - [Interoperability](#interoperability)
-- [Internationalization/Localization](#internationalization/localization)
-- [Input/Output](#input/output)
+- [Internationalization/Localization](#internationalizationlocalization)
+- [Input/Output](#inputoutput)
 - [Error Processing](#error-processing)
 - [Fault Tolerance](#fault-tolerance)
 - [Architectural Feasibility](#architectural-feasibility)
@@ -96,13 +96,13 @@ In order to have our website and game run as smoothly as possible, we take preve
 We want the website to be as usable as possible at all times. If a fault is detected - such as if the user is unable to connect to Websockets - we still want the user to be able to navigate the site, while keeping them informed that functionality may be impaired while they are unable to connect. In doing so, we will have a state of default functionality which has been extensively tested and is widely operational, regardless of possible connection errors. 
 
 ## Architectural Feasibility
-The biggest risk in our architecture is the feasibility of using Python as the programming language for our game's backend/logic. Making a game in Python is certainly feasible - proven through the very existence of PyGame - however, PyGame does not have built-in functionality to handle collisions (unlike game engines such as Unity or Unreal, which make handling collisions simple). Given that our game relies heavily on collision mechanics, it is extremely pertinent that we are able to detect and handle collisions as they happen. This being said, handling collisions in PyGame is certainly possible, albeit with a bit of work. Through research, we have found many tutorials and code samples to aid us in handling collisions. 
+The biggest risk in our architecture is the feasibility of using Python as the programming language for our game's backend/logic. Making a game in Python is certainly feasible - proven through the very existence of PyGame - however, neither Python nor PyGame itself has built-in functionality to handle collisions (unlike game engines such as Unity or Unreal, which make handling collisions simple). Given that our game relies heavily on collision mechanics, it is extremely pertinent that we are able to detect and handle collisions as they happen. This being said, handling collisions in Python is certainly possible, albeit with a bit of work. Through research, we have found many tutorials and code samples to aid us in handling collisions. 
 
 ## Overengineering
 We have sufficiently mapped out use cases and requirements in order to lessen overengineering. Our entire team is well aware of the requirements we aim to fulfill as well as the intended use of our game, and as such we have made design decisions accordingly, keeping them minimal yet properly functional. 
 
 ## Build-vs-Buy Decisions
-We are using entirley free or open source resources for our game, including the free tier of Firebase (which allows us the use of the Firebase JavaScript SDK and Firebase tools) as well as PyGame. We are also using Firebase's free hosting services in order to host our website, and we have obtained a domain name for free as well. 
+We are using entirley free or open source resources for our game, including the free tier of Firebase (which allows us the use of the Firebase JavaScript SDK and Firebase tools) as well as open source references for game making in Python. We are also using Firebase's free hosting services in order to host our website, and we have obtained a domain name for free as well. 
 
 ## Reuse
 We will not be reusing any pre-existing software for our game. 
