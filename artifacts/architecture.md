@@ -66,19 +66,22 @@ At this time, we do not have the capacitiy to implement localization into our ga
 The only input necessary to interact with the website and game will be through keyboard and mouse. The user can use WASD or arrow keys to interact with the game and move their character up, left, down, or right, respectively. Mouse interactions will be handled on click, and keyboard inputs will be read and handled at the speed at which they are entered.
 
 # Error Processing
+In order to have our website and game run as smoothly as possible, we take preventitive measures to avoid errors, and handle them appropriately as they are encountered. When users input data, the data is checked for improper formatting before it is input for authentication or entered into the database. In doing so, we are able to prevent incorrect or improper data from entering the database. When we encounter improper data, we alert the user that their data has been incorrectly entered and allow them to retype their data. As well as this, when authentication fails, we immediately alert the user of what error has been encountered and why their authentication has failed, so that they may try again. 
 
 # Fault Tolerance
+We want the website to be as usable as possible at all times, so if a fault is detected - such as if the user is unable to connect to Websockets - we still want the user to be able to navigate the site, while keeping them informed that functionality may be impaired while they are unable to connect. In doing so, we will have a state of default functionality which has been extensively tested and is widely operational, regardless of possible connection errors. 
 
 # Architectural Feasibility
+The biggest risk in our architecture is the feasibility of using Python as the programming language for our game's backend/logic. Making a game in Python is certainly feasible - proven through the very existence of PyGame - however, PyGame does not have built-in functionality to handle collisions (unlike game engines such as Unity or Unreal, which make handling collisions simple). Given that our game relies heavily on collision mechanics, it is extremely pertinent that we are able to detect and handle collisions as they happen. This being said, handling collisions in PyGame is certainly possible, albeit with a bit of work. Through research, we have found many tutorials and code samples to aid us in handling collisions. 
 
 # Overengineering
+We have sufficiently mapped out use cases and requirements in order to lessen overengineering. Our entire team is well aware of the requirements we aim to fulfill as well as the intended use of our game, and as such we have made design decisions accordingly, keeping them minimal yet properly functional. 
 
 # Build-vs-Buy Decisions
-
-- Third Party Libraries
-    - Firebase JavaScript SDK
-    - Firebase Tools
+We are using entirley free or open source resources for our game, including the free tier of Firebase (which allows us the use of the Firebase JavaScript SDK and Firebase tools) as well as PyGame. We are also using Firebase's free hosting services in order to host our website, and we have obtained a domain name for free as well. 
 
 # Reuse
+We will not be reusing any pre-existing software for our game. 
 
 # Change Strategy
+In order to anticipate change, we will be avoiding using hard-coded values in our code, and instead use more easily flexible constant values, which can be changed in one keystroke. As well as this, we have creating a single script which connects the website to the database, so that if the connection script ever needs to be changed it will only need to change in one place. 
