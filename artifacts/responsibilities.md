@@ -1,3 +1,7 @@
+# Responsibilities 
+
+## Sprint 4
+
 Steven - Worked with Stephanie to allow account creation, recognize existing user log-in, and manage data input into the database.
 
 Mike - 
