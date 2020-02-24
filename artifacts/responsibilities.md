@@ -1,7 +1,8 @@
 # Responsibilities 
 
 ## Sprint 4
-
+| Name | Responsibilities | 
+|------|------------------|
 | Steven | Worked with Stephanie to allow account creation, recognize existing user log-in, and manage data input into the database. |
 | Andrew | Worked on the design documentation, and video demonstration. |
 | Stephanie | Worked with Steven to allow account creation, recognize existing user log-in, and manage data input into the database. |

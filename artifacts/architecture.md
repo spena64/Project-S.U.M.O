@@ -63,7 +63,7 @@ We will be using a Firebase realtime database and storing data by client/server 
 At this time, we do not have the capacitiy to implement localization into our game. As such, all text will be available solely in English. This should not be an issue as we are not anticipating our game to reach an international audience.
 
 # Input/Output
-The only input necessary to interact with the website and game will be through keyboard and mouse. The user can use WASD or arrow keys to interact with the game and move their character up, left, down, or right, respectively. Mouse interactions will be handled on click, and keyboard inputs will be read and handled at the speed at which they are input.
+The only input necessary to interact with the website and game will be through keyboard and mouse. The user can use WASD or arrow keys to interact with the game and move their character up, left, down, or right, respectively. Mouse interactions will be handled on click, and keyboard inputs will be read and handled at the speed at which they are entered.
 
 # Error Processing
 
