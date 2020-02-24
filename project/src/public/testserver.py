@@ -1,9 +1,11 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from os import curdir, sep
 import socketserver
+import json
 
 PORT = 8080
 
+# Resource requests
 class requestHandler(BaseHTTPRequestHandler):
     def set_headers(self, contentType):
         self.send_response(200)
@@ -37,7 +39,7 @@ class requestHandler(BaseHTTPRequestHandler):
         except IOError:
             self.send_error(404, f"File Not Found: {self.path}")
 
-
+# Start server
 with HTTPServer(("", PORT), requestHandler) as server:
     print("serving at port", PORT)
     server.serve_forever()
