@@ -1,4 +1,7 @@
-Steven - Woked on account creation, and managing accounts into the database.
+Steven - Worked with Stephanie to allow account creation, recognize existing user log-in, and manage data input into the database.
+
 Mike - 
+
 Andrew - 
-Stephanie - 
+
+Stephanie - Worked with Steven to allow account creation, recognize existing user log-in, and manage data input into the database.
