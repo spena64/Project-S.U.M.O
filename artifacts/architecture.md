@@ -44,19 +44,22 @@ This image is a visulaization of our major class diagram. In the diagram we have
 [UI Design](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/UI%20Design.md) (all UI wireframes created using https://wireframepro.mockflow.com/)
 
 # Resource Management
+As we will be using the free-tier Firebase Spark Plan, there are certain hard limits on storage/user management to which we will need to adhere. The most pressing of these pertain to database storage, which is capped at one database with 1 GB stored and 100 simultaneous connections. This will not pose an issue, as we do not expect to have that many concurrent users and we do not require storage-heavy data to be kept in the database, so we should be able to stay well within these contraints. 
 
 # Security
-Login information will be sanitized to prevent SQL injection.
+Most security issues will be handled using built-in firebase scripts. Passwords will not be stored in the database unless hashed, and due to the no-SQL nature of the firebase database, input sanitization will not be necessary, and we will not be at risk for code injection. 
 
 # Performance
+As this is a multiplayer game, performance is a top priority. The game must be able to perform at real-time speeds to allow for fair competition between users. Using websockets will help allow for concurrent connected users to see realtime changes in the game space. Additionally, game-related functions will be minimally intensive so as to avoid lag. 
 
 # Scalability
+While we do not intend to scale this game to a larger audience, we intend to implement slightly smaller "scalable" functionality within the game within private lobbies. In private lobbies set to tournmanet mode, the tournamnet bracket will be able to scale and populate based on the number of participants who have joined the lobby. 
 
 # Interoperability
-We will be using a Firebase database and storing data by client/server database system
+We will be using a Firebase realtime database and storing data by client/server database system.
 
 # Internationalization/Localization
-Our product will not aim to reach international audience and plan to stay with the local language of English
+At this time, we do not have the capacitiy to implement localization into our game. As such, all text will be available solely in English. This should not be an issue as we are not anticipating our game to reach an international audience.
 
 # Input/Output
 
