@@ -3,6 +3,17 @@ const pass = document.getElementById("password_field");
 const cpass = document.getElementById("cpassword");
 const nickname = document.getElementById("nickname_field");
 
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if (user)
+  {
+    console.log('logged in as ' + user.email);
+  }
+    
+  else
+    console.log('user logged out ');
+})
+
 async function createAccount()
 { 
   var firebaseRef = firebase.database().ref("Users");
