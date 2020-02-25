@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css" />
         
-        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script> -->
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
     </head>
@@ -21,23 +21,7 @@
             <button onclick="window.location.href='continue-as-guest.html'" id="continueGuest"> Continue as a Guest </button>
         </div>
 
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyAOk918OH35Ie5dx62O6HX4KmaSLn58cHQ",
-                authDomain: "project-sumo-e6f87.firebaseapp.com",
-                databaseURL: "https://project-sumo-e6f87.firebaseio.com",
-                projectId: "project-sumo-e6f87",
-                storageBucket: "project-sumo-e6f87.appspot.com",
-                messagingSenderId: "548557512640",
-                appId: "1:548557512640:web:2913ecd0b8c1ba3a24b225",
-                measurementId: "G-W9VE8EX4DC"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            const database = firebase.database();
-            const auth = firebase.auth();
-        </script>
+        <script src="firebase.js"></script>
     
         <script src="index.js"> </script>
     </body>
