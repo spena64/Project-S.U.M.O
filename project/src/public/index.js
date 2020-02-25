@@ -11,7 +11,7 @@ auth.onAuthStateChanged(user => {
   }
     
   else
-    console.log('user logged out ');
+    console.log('no user logged in');
 })
 
 async function createAccount()
@@ -82,6 +82,7 @@ async function createAccount()
   {
     auth.signOut();
     alert("Signed out!");
+    window.location.href = 'index.html';
   }
 
   async function continueGuest()
