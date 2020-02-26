@@ -51,6 +51,8 @@ document.addEventListener('keyup', function(event) {
 });
 
 // Establish websocket connection
+const userID = Math.random().toString(36).substring(2);
+console.log(userID);
 const ws = new WebSocket("ws://localhost:8081/");
 let socketOpen = false;
 
@@ -59,6 +61,7 @@ ws.onopen = function() {
     socketOpen = true;
     var data = {
         type: "newConnection",
+        id: userID
     }
     ws.send(JSON.stringify(data));
     setInterval(sendInput, 1000 / 60);
@@ -69,7 +72,7 @@ sendInput = function() {
     if (socketOpen) {
         var data = {
             type: "gameInput",
-            body: movement,
+            body: movement
         }
         ws.send(JSON.stringify(data));
     }

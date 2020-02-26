@@ -15,14 +15,16 @@ class GameServer:
         print("Creating new game server.")
 
     async def on_message(self, ws, path):
+        userID = ""
         while(True):
             message = await ws.recv()
             message = json.loads(message)
 
             if (message["type"] == "newConnection"):
+                userID = message["id"]
                 if (self.isMatchStarted == False):
-                    self.testMatch.addPlayer(str(ws), [400, 500], 0.25, 30, 1)
-                    print("New connection at websocket " + str(ws))
+                    self.testMatch.addPlayer(userID, [400, 500], 0.25, 30, 1)
+                    print("New connection at websocket " + str(ws) + " with id " + userID)
                     outMsg = json.dumps({
                         "type": "info",
                         "body": "Joined match."
@@ -43,7 +45,7 @@ class GameServer:
                 playerInputs = message["body"]
                 inputX = playerInputs["right"] - playerInputs["left"]
                 inputY = playerInputs["down"] - playerInputs["up"]
-                self.testMatch.setPlayerInput(str(ws), inputX, inputY)
+                self.testMatch.setPlayerInput(userID, inputX, inputY)
 
             # Send player data to client
             outData = {
@@ -51,7 +53,7 @@ class GameServer:
                 "matchState": self.testMatch.getMatchData(),
                 "body": self.testMatch.getPlayerData()
             }
-            if (outData["matchState"]["winner"] == str(ws)):
+            if (outData["matchState"]["winner"] == userID):
                 outData["matchState"]["youWin"] = True
             await ws.send(json.dumps(outData))
             
