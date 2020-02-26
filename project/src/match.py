@@ -7,64 +7,64 @@ RING_RADIUS = 450
 
 class Match:
     def __init__(self):
-        self.playerDict = {}
+        self.player_dict = {}
         self.state = "waiting"
         self.winner = "Undecided"
 
-    def addPlayer(self, userID, position, accelerationRate, radius, mass):
-        self.playerDict[userID] = Player(position, accelerationRate, radius, mass)
+    def add_player(self, user_id, position, acceleration_rate, radius, mass):
+        self.player_dict[user_id] = Player(position, acceleration_rate, radius, mass)
 
-    def runGameLoop(self):
+    def run_game_loop(self):
         # Game loop
         self.state = "started"
         while(True):
-            inRingNum = 0
-            for id in self.playerDict:
-                player = self.playerDict[id]
+            in_ring_num = 0
+            for id in self.player_dict:
+                player = self.player_dict[id]
                 player.move()
-                if (player.isInBounds()):
-                    inRingNum += 1
+                if (player.is_in_bounds()):
+                    in_ring_num += 1
             
-            if (inRingNum == 1):
+            if (in_ring_num == 1):
                 break
             time.sleep(0.01)
-        self.endMatch()
+        self.end_match()
 
-    def endMatch(self):
+    def end_match(self):
         self.state = "finished"
-        for id in self.playerDict:
-            player = self.playerDict[id]
-            if (player.isInBounds()):
+        for id in self.player_dict:
+            player = self.player_dict[id]
+            if (player.is_in_bounds()):
                 self.winner = id
 
-    def getMatchData(self):
-        matchData = {
+    def get_match_data(self):
+        match_data = {
             "state": self.state,
             "winner": self.winner,
             "youWin": False
         }
-        return matchData
+        return match_data
 
-    def getPlayerState(self, userID):
-        playerState = {
-            "x": self.playerDict[userID].getPosition()[0],
-            "y": self.playerDict[userID].getPosition()[1],
-            "radius": self.playerDict[userID].getRadius()
+    def get_player_state(self, user_id):
+        player_state = {
+            "x": self.player_dict[user_id].get_position()[0],
+            "y": self.player_dict[user_id].get_position()[1],
+            "radius": self.player_dict[user_id].get_radius()
         }
-        return playerState
+        return player_state
 
-    def getPlayerData(self):
-        playerData = {}
-        for id in self.playerDict:
-            playerData[id] = self.getPlayerState(id)
-        return playerData
+    def get_player_data(self):
+        player_data = {}
+        for id in self.player_dict:
+            player_data[id] = self.get_player_state(id)
+        return player_data
 
-    def setPlayerInput(self, userId, inputX, inputY):
-        directionVector = self.normalizeInput(inputX, inputY)
-        self.playerDict[userId].setDirection(directionVector)
+    def set_player_input(self, user_id, input_x, input_y):
+        direction_vector = self.normalize_input(input_x, input_y)
+        self.player_dict[user_id].set_direction(direction_vector)
         return
 
-    def normalizeInput(self, x, y):
+    def normalize_input(self, x, y):
         magnitude = math.sqrt(x ** 2 + y ** 2)
         if (magnitude == 0):
             return [0, 0]
@@ -72,25 +72,25 @@ class Match:
         return [x / magnitude, y / magnitude]
     
 class Player:
-    def __init__(self, position, accelerationRate, radius, mass):
+    def __init__(self, position, acceleration_rate, radius, mass):
         self.position = position
         self.speed = [0, 0]
         self.direction = [0, 0]
-        self.accelerationRate = accelerationRate
+        self.acceleration_rate = acceleration_rate
         self.radius = radius
         self.mass = mass
         self.drag = 1.01
-        self.isAlive = True
+        self.is_alive = True
     
-    def getPosition(self):
+    def get_position(self):
         return self.position
 
-    def getRadius(self):
+    def get_radius(self):
         return self.radius
 
     def move(self):
-        self.speed[0] += self.direction[0] * self.accelerationRate
-        self.speed[1] += self.direction[1] * self.accelerationRate
+        self.speed[0] += self.direction[0] * self.acceleration_rate
+        self.speed[1] += self.direction[1] * self.acceleration_rate
 
         self.position[0] += self.speed[0]
         self.position[1] += self.speed[1]
@@ -105,22 +105,22 @@ class Player:
             self.speed[1] = 0
 
         # Kill movement if out of bounds
-        self.isAlive = math.sqrt( (self.position[0] - RING_CENTER_X) ** 2 + (self.position[1] - RING_CENTER_Y) ** 2 ) < RING_RADIUS
-        if (self.isAlive == False):
+        self.is_alive = math.sqrt( (self.position[0] - RING_CENTER_X) ** 2 + (self.position[1] - RING_CENTER_Y) ** 2 ) < RING_RADIUS
+        if (self.is_alive == False):
             self.direction = [0, 0]
         return
 
-    def setDirection(self, directionVector):
-        if (self.isAlive == True):
-            self.direction = directionVector
+    def set_direction(self, direction_vector):
+        if (self.is_alive == True):
+            self.direction = direction_vector
         return
 
-    def checkCollision(self):
+    def check_collision(self):
         return
 
     def bounce(self):
         return
 
-    def isInBounds(self):
-        return self.isAlive
+    def is_in_bounds(self):
+        return self.is_alive
 

@@ -2,62 +2,61 @@ import asyncio
 import json
 import websockets
 import threading
-import concurrent.futures
 import match
 
 class GameServer:
     def __init__(self):
         self.PORT = 8081
 
-        self.testMatch = match.Match()
-        self.matchThread = threading.Thread(target=self.testMatch.runGameLoop, daemon=True)
-        self.isMatchStarted = False
+        self.test_match = match.Match()
+        self.match_thread = threading.Thread(target=self.test_match.run_game_loop, daemon=True)
+        self.is_match_started = False
         print("Creating new game server.")
 
     async def on_message(self, ws, path):
-        userID = ""
+        user_id = ""
         while(True):
             message = await ws.recv()
             message = json.loads(message)
 
             if (message["type"] == "newConnection"):
-                userID = message["id"]
-                if (self.isMatchStarted == False):
-                    self.testMatch.addPlayer(userID, [400, 500], 0.25, 30, 1)
-                    print("New connection at websocket " + str(ws) + " with id " + userID)
-                    outMsg = json.dumps({
+                user_id = message["id"]
+                if (self.is_match_started == False):
+                    self.test_match.add_player(user_id, [400, 500], 0.25, 30, 1)
+                    print("New connection at websocket " + str(ws) + " with id " + user_id)
+                    out_msg = {
                         "type": "info",
                         "body": "Joined match."
-                    })
-                    await ws.send(outMsg)
+                    }
+                    await ws.send(json.dumps(out_msg))
                 else:
-                    outMsg = json.dumps({
+                    out_msg = {
                         "type": "info",
                         "body": "Match already started, cannot join."
-                    })
-                    await ws.send(outMsg)
+                    }
+                    await ws.send(json.dumps(out_msg))
                     return
-            if (message["type"] == "startMatch" and self.isMatchStarted == False):
-                self.isMatchStarted = True
+            if (message["type"] == "startMatch" and self.is_match_started == False):
+                self.is_match_started = True
                 print("Started match.")
-                self.matchThread.start()
+                self.match_thread.start()
             if (message["type"] == "gameInput"):
-                playerInputs = message["body"]
-                inputX = playerInputs["right"] - playerInputs["left"]
-                inputY = playerInputs["down"] - playerInputs["up"]
-                self.testMatch.setPlayerInput(userID, inputX, inputY)
+                player_inputs = message["body"]
+                input_x = player_inputs["right"] - player_inputs["left"]
+                input_y = player_inputs["down"] - player_inputs["up"]
+                self.test_match.set_player_input(user_id, input_x, input_y)
 
             # Send player data to client
-            outData = {
+            out_data = {
                 "type": "gameState",
-                "matchState": self.testMatch.getMatchData(),
-                "body": self.testMatch.getPlayerData()
+                "matchState": self.test_match.get_match_data(),
+                "body": self.test_match.get_player_data()
             }
-            if (outData["matchState"]["winner"] == userID):
-                outData["matchState"]["youWin"] = True
-            await ws.send(json.dumps(outData))
+            if (out_data["matchState"]["winner"] == user_id):
+                out_data["matchState"]["youWin"] = True
+            await ws.send(json.dumps(out_data))
             
-            if (outData["matchState"]["state"] == "finished"):
+            if (out_data["matchState"]["state"] == "finished"):
                 break
 
     def start_game_server(self):
@@ -67,5 +66,5 @@ class GameServer:
         asyncio.get_event_loop().run_until_complete(start_server)
         asyncio.get_event_loop().run_forever()
 
-testGameServer = GameServer()
-testGameServer.start_game_server()
+test_game_server = GameServer()
+test_game_server.start_game_server()
