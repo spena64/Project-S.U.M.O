@@ -3,17 +3,6 @@ const pass = document.getElementById("password_field");
 const cpass = document.getElementById("cpassword");
 const nickname = document.getElementById("nickname_field");
 
-// listen for auth status changes
-auth.onAuthStateChanged(user => {
-  if (user)
-  {
-    console.log('logged in as ' + user.email);
-  }
-    
-  else
-    console.log('no user logged in');
-})
-
 async function createAccount()
 { 
   var firebaseRef = firebase.database().ref("Users");
@@ -115,3 +104,14 @@ async function createAccount()
     }
     return false; 
   }
+
+  // listen for auth status changes
+firebase.auth().onAuthStateChanged(user => {
+  if (user)
+  {
+    console.log('logged in as ' + user.email);
+  }
+    
+  else
+    console.log('no user logged in');
+})
