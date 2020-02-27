@@ -5,34 +5,16 @@ const nickname = document.getElementById("nickname_field");
 
 async function createAccount()
 { 
-  var firebaseRef = firebase.database().ref("Users");
-  
   if (email.value != "" && nickname.value != "" && pass.value != "" && cpass.value != "")
   {
     if (isAlphanumeric(nickname)) 
     {
       if (pass.value == cpass.value)
       {
-        var flag;
-        await auth.createUserWithEmailAndPassword(email.value, pass.value).then(function(user) {
-          flag = true; 
-        })
-        .catch(function(error) {
-          window.alert(error.message); 
-          flag = false; 
-        });
-        
-        if(flag)
+        if(await authenticate())
         {
-          firebaseRef.push(
-          {
-            email: email.value,
-            password: pass.value,
-            nickname: nickname.value
-          });
-
+          pushToDatabase(); 
           alert("Welcome, " + nickname.value + "!");
-
           window.location.href = 'login.html'; 
         }
       }
@@ -42,70 +24,96 @@ async function createAccount()
     else 
       window.alert("Nickname must be alphanumeric!");
   }
-    else
-      window.alert("Signup is incomplete!");
-  }
+  else
+    window.alert("Signup is incomplete!");
+}
 
-  async function login()
-  {   
-    if (email.value != "" && pass.value != "")
-    {
-      await auth.signInWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
-
-      firebase.auth().onAuthStateChanged(function(currentUser) 
-      {
-        if (currentUser && !currentUser.isAnonymous)
-        {
-          console.log(currentUser); 
-          // TODO: figure out why nickname shows up as undefined 
-          alert("Successfully logged in " + currentUser.email + "!"); 
-          window.location.href = 'home-page.html';
-        }
-      }); 
-    }  
-    else 
-      window.alert("Email and password required!");
-  }
-
-  function signOut() 
+async function login()
+{   
+  if (email.value != "" && pass.value != "")
   {
-    auth.signOut();
-    alert("Signed out!");
-    window.location.href = 'index.html';
-  }
+    await auth.signInWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
 
-  async function continueGuest()
-  {
-    if (nickname.value != "") 
+    firebase.auth().onAuthStateChanged(function(currentUser) 
     {
-      if (isAlphanumeric(nickname)) 
+      if (currentUser && !currentUser.isAnonymous)
       {
-        await auth.signInAnonymously();
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-        console.log(firebaseUser);
-        });
-      
-        alert("Welcome, " + nickname.value + "!"); 
+        console.log(currentUser); 
+        // TODO: figure out why nickname shows up as undefined 
+        alert("Successfully logged in " + currentUser.email + "!"); 
         window.location.href = 'home-page.html';
       }
-      else 
-        window.alert("Nickname must be alphanumeric!");
-    }
-    else
-      window.alert("Please enter a nickname!"); 
-  }
+    }); 
+  }  
+  else 
+    window.alert("Email and password required!");
+}
 
-  function isAlphanumeric(str) 
+function signOut() 
+{
+  auth.signOut();
+  alert("Signed out!");
+  window.location.href = 'index.html';
+}
+
+async function continueGuest()
+{
+  if (nickname.value != "") 
   {
-    var acceptableChars = /^[0-9a-zA-Z]+$/; 
-    if(str.value.match(acceptableChars))
+    if (isAlphanumeric(nickname)) 
     {
-      return true;
+      await auth.signInAnonymously();
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+      console.log(firebaseUser);
+      });
+    
+      alert("Welcome, " + nickname.value + "!"); 
+      window.location.href = 'home-page.html';
     }
-    return false; 
+    else 
+      window.alert("Nickname must be alphanumeric!");
   }
+  else
+    window.alert("Please enter a nickname!"); 
+}
 
-  // listen for auth status changes
+async function authenticate()
+{
+  var flag; 
+  await auth.createUserWithEmailAndPassword(email.value, pass.value).then(function(user) {
+    flag = true; 
+  })
+  .catch(function(error) {
+    window.alert(error.message); 
+    flag = false; 
+  });
+
+  return flag; 
+}
+
+function pushToDatabase() 
+{
+  var firebaseRef = firebase.database().ref("Users");
+
+  firebaseRef.push(
+    {
+      email: email.value,
+      password: pass.value,
+      nickname: nickname.value
+    });
+}
+
+function isAlphanumeric(str) 
+{
+  var acceptableChars = /^[0-9a-zA-Z]+$/; 
+  if(str.value.match(acceptableChars))
+  {
+    return true;
+  }
+  return false; 
+}
+
+// listen for auth status changes
 firebase.auth().onAuthStateChanged(user => {
   if (user)
   {
