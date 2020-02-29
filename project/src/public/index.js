@@ -93,9 +93,10 @@ async function authenticate()
 
 function pushToDatabase() 
 {
-  var firebaseRef = firebase.database().ref("Users");
+  var userId = firebase.auth().currentUser.uid;
+  var firebaseRef = firebase.database().ref("/Users/" + userId);
 
-  firebaseRef.push(
+  firebaseRef.set(
     {
       email: email.value,
       password: pass.value,
