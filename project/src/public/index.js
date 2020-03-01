@@ -38,15 +38,33 @@ async function login()
     {
       if (currentUser && !currentUser.isAnonymous)
       {
-        console.log(currentUser); 
-        // TODO: figure out why nickname shows up as undefined 
-        alert("Successfully logged in " + currentUser.email + "!"); 
-        window.location.href = 'home-page.html';
+        if(getNickname())
+          window.location.href = 'home-page.html';
+        else 
+          window.alert("Error connecting to databse. Please try again later."); 
       }
     }); 
   }  
   else 
     window.alert("Email and password required!");
+}
+
+async function getNickname(currentUser) 
+{
+  var userId = firebase.auth().currentUser.uid;
+  console.log(userId); 
+  
+  var firebaseRef = firebase.database().ref("/Users/" + userId + "/nickname");
+
+  await firebaseRef.on('value', function(snapshot) {
+    if (snapshot.val())
+    {
+      window.alert("Successfully logged in " + snapshot.val() + "!"); 
+      return true; 
+    }
+    else
+      return false;
+  });
 }
 
 function signOut() 
