@@ -4,13 +4,14 @@ import websockets
 import threading
 from online_user import OnlineUser
 from game_queue import GameQueue
+from lobby import LobbyManager
 from lobby import DuoLobby
 
 class GameServer:
     def __init__(self):
         self.PORT = 8081
         self.user_dict = {}
-        self.lobby_dict = {}
+        self.lobby_manager = LobbyManager(self.user_dict)
 
         self.queue_duo = GameQueue(2)
 
@@ -50,37 +51,27 @@ class GameServer:
                     await ws.send(json.dumps(out_msg))
             if (message["type"] == "gameInput"):
                 if (self.user_dict[user_id].status == "PLAYING"):
-                    player_lobby = self.user_dict[user_id].lobby_id
                     player_inputs = message["body"]
                     input_x = player_inputs["right"] - player_inputs["left"]
                     input_y = player_inputs["down"] - player_inputs["up"]
-                    self.lobby_dict[player_lobby].relay_input(user_id, input_x, input_y)
+                    self.lobby_manager.get_lobby_by_playerid(user_id).relay_input(user_id, input_x, input_y)
 
             # Send outgoing messages
             if (self.user_dict[user_id].status == "PLAYING"):
-                player_lobby = self.user_dict[user_id].lobby_id
                 out_msg = {
                     "type": "gameState",
-                    "body": self.lobby_dict[player_lobby].get_game_state(user_id)
+                    "body": self.lobby_manager.get_lobby_by_playerid(user_id).get_game_state(user_id)
                 }
                 await ws.send(json.dumps(out_msg))
             
         del self.user_dict[user_id]
+        print("Connection at websocket " + str(ws) + " closed, user " + user_id + " removed.")
 
     def start_matchmaking_duo(self):
         while(True):
             new_group = self.queue_duo.find_players()
-            new_lobby = DuoLobby(new_group)
-            self.lobby_dict[new_lobby.lobby_id] = new_lobby
-            for uid in new_group:
-                self.user_dict[uid].lobby_id = new_lobby.lobby_id
-
-            lobby_thread = threading.Thread(target=new_lobby.run_match, daemon=True)
+            lobby_thread = threading.Thread(target=self.lobby_manager.host_duo_lobby, args=new_group, daemon=True)
             lobby_thread.start()
-            print("New lobby with id " + new_lobby.lobby_id + " started.")
-
-            # TODO: remove lobby from dict when lobby ends
-
 
     def start_game_server(self):
         print("Starting server at port " + str(self.PORT))

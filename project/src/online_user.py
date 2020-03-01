@@ -5,4 +5,4 @@ class OnlineUser:
         # QUEUEING - waiting in a matchmaking queue
         # PLAYING - in a lobby
         self.status = "IDLE"
-        self.lobby_id = ""
+        self.lobby_id = "none"

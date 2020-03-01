@@ -20,7 +20,7 @@ class DuoLobby(Lobby):
     def relay_input(self, user_id, input_x, input_y):
         self.match.set_player_input(user_id, input_x, input_y)
 
-    def run_match(self):
+    def play(self):
         self.status = "STARTED"
         self.match.run_game_loop()
         self.status = "FINISHED"
@@ -32,3 +32,27 @@ class DuoLobby(Lobby):
             "playerData": self.match.get_player_data()
         }
         return game_state
+
+class LobbyManager():
+    def __init__(self, u_dict):
+        self.lobby_dict = {}
+        self.user_dict = u_dict
+
+    def host_duo_lobby(self, players):
+        new_lobby = DuoLobby(players)
+        self.lobby_dict[new_lobby.lobby_id] = new_lobby
+        for uid in players:
+            self.user_dict[uid].lobby_id = new_lobby.lobby_id
+
+        print("New lobby with id " + new_lobby.lobby_id + " started.")
+        new_lobby.play()
+
+        # Possibly test for rematch?
+
+        del self.lobby_dict[new_lobby.lobby_id]
+        for uid in players:
+            self.user_dict[uid].lobby_id = "none"
+            self.user_dict[uid].status = "IDLE"
+
+    def get_lobby_by_playerid(self, user_id):
+        return self.lobby_dict[self.user_dict[user_id].lobby_id]
