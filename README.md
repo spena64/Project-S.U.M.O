@@ -55,7 +55,7 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 
 ## Sprint 4
 
-- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md)
+- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-4)
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
 - [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1719866228)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
@@ -76,12 +76,12 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
     
  ## Sprint 5
  
-- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md)
+- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-5)
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
-- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1719866228)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=704347848)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
-- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=1837557507)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=566557266)
 - [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
 - Design Documents
   - [Event Storming](https://miro.com/app/board/o9J_kvGTt2E=/)
@@ -94,3 +94,4 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 - Product Demonstration
     - [Website Portion](https://www.youtube.com/watch?v=l7IL7vkGsAI)
     - [Game Portion](https://www.youtube.com/watch?v=M3Y8wHI_S7U)
+    - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)

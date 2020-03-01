@@ -37,12 +37,14 @@ class Match:
             if (player.is_in_bounds()):
                 self.winner = id
 
-    def get_match_data(self):
+    def get_match_data(self, user_id):
         match_data = {
             "state": self.state,
             "winner": self.winner,
             "youWin": False
         }
+        if (match_data["winner"] == user_id):
+            match_data["youWin"] = True
         return match_data
 
     def get_player_state(self, user_id):
