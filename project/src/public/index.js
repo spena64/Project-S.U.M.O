@@ -40,8 +40,7 @@ async function login()
       if(userNickname) 
       {
         window.alert("Successfully logged in " + userNickname + "!");
-        console.log("returned true");
-        //window.location.href = 'home-page.html';
+        window.location.href = 'home-page.html';
       }
       else 
         window.alert("Error connecting to databse. Please try again later."); 
@@ -54,17 +53,14 @@ async function login()
 async function retrieve(data)
 {
   var userId = firebase.auth().currentUser.uid; 
-  console.log(userId); 
 
   var firebaseRef = firebase.database().ref("/Users/" + userId + "/" + data);
-  console.log(firebaseRef); 
+   
   return new Promise(function(resolve, reject) {
     firebaseRef.once('value').then(function(snapshot) {
-      console.log(snapshot.val());
       if (snapshot.val())
       {
-        var retval = String("" + snapshot.val() + ""); 
-          resolve(retval);
+        resolve(snapshot.val());
       }
     }); 
   });
