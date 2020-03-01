@@ -1,4 +1,5 @@
 
+
 // Draw game state
 const canvas = document.getElementById('canvas');
 canvas.width = 2000;
@@ -17,3 +18,8 @@ context.strokeStyle = 'red';
 context.beginPath();
 context.arc(700, 500, 450, 0, 2 * Math.PI);
 context.stroke();
+
+window.addEventListener("load" , function () {
+  const loader = document.querySelector(".loader");
+  loader.className += " hidden";
+});
