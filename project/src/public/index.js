@@ -34,16 +34,18 @@ async function login()
   {
     await auth.signInWithEmailAndPassword(email.value, pass.value).catch(e => alert(e.message));
 
-    firebase.auth().onAuthStateChanged(function(currentUser) 
+    if (auth.currentUser)
     {
-      if (currentUser && !currentUser.isAnonymous)
+      let userNickname = await retrieve("nickname"); 
+      if(userNickname) 
       {
-        if(retrieve("nickname"))
-          window.location.href = 'home-page.html';
-        else 
-          window.alert("Error connecting to databse. Please try again later."); 
+        window.alert("Successfully logged in " + userNickname + "!");
+        console.log("returned true");
+        //window.location.href = 'home-page.html';
       }
-    }); 
+      else 
+        window.alert("Error connecting to databse. Please try again later."); 
+    }
   }  
   else 
     window.alert("Email and password required!");
@@ -52,18 +54,20 @@ async function login()
 async function retrieve(data)
 {
   var userId = firebase.auth().currentUser.uid; 
+  console.log(userId); 
 
   var firebaseRef = firebase.database().ref("/Users/" + userId + "/" + data);
-
-  await firebaseRef.on('value', function(snapshot) {
-    if (snapshot.val())
-    {
-      window.alert("Successfully logged in " + snapshot.val() + "!"); 
-      return true; 
-    }
-    else
-      return false;
-  }); 
+  console.log(firebaseRef); 
+  return new Promise(function(resolve, reject) {
+    firebaseRef.once('value').then(function(snapshot) {
+      console.log(snapshot.val());
+      if (snapshot.val())
+      {
+        var retval = String("" + snapshot.val() + ""); 
+          resolve(retval);
+      }
+    }); 
+  });
 }
 
 function signOut() 
