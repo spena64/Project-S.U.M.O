@@ -38,7 +38,7 @@ async function login()
     {
       if (currentUser && !currentUser.isAnonymous)
       {
-        if(getNickname())
+        if(retrieve("nickname"))
           window.location.href = 'home-page.html';
         else 
           window.alert("Error connecting to databse. Please try again later."); 
@@ -49,12 +49,11 @@ async function login()
     window.alert("Email and password required!");
 }
 
-async function getNickname(currentUser) 
+async function retrieve(data)
 {
-  var userId = firebase.auth().currentUser.uid;
-  console.log(userId); 
-  
-  var firebaseRef = firebase.database().ref("/Users/" + userId + "/nickname");
+  var userId = firebase.auth().currentUser.uid; 
+
+  var firebaseRef = firebase.database().ref("/Users/" + userId + "/" + data);
 
   await firebaseRef.on('value', function(snapshot) {
     if (snapshot.val())
@@ -64,7 +63,7 @@ async function getNickname(currentUser)
     }
     else
       return false;
-  });
+  }); 
 }
 
 function signOut() 
