@@ -135,9 +135,14 @@ function isAlphanumeric(str)
 firebase.auth().onAuthStateChanged(user => {
   if (user)
   {
-    console.log('logged in as ' + user.email);
+    if (window.location.href == 'https://project-sumo-e6f87.firebaseapp.com/')
+    {
+      console.log('logged in as ' + user.email);
+      window.location.href = 'home-page.html';
+    }
+    else
+      console.log('logged in as ' + user.email);
   }
-    
   else
-    console.log('no user logged in');
+      console.log('no user logged in');
 })
