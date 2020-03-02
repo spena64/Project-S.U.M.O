@@ -1,8 +1,11 @@
 from match import Match
+import random
+import string
+import time
 
 class Lobby():
     def __init__(self):
-        self.lobby_id = "" # TODO: generate random hash
+        self.lobby_id = "".join([random.choice(string.ascii_letters + string.digits) for n in range(8)])
         # WAITING - waiting for players to join / ready up
         # STARTED - matches are being played
         # FINISHED - all matches have completed
@@ -10,12 +13,13 @@ class Lobby():
 
 class DuoLobby(Lobby):
     def __init__(self, player_ids):
-        super().__init__(self)
+        super().__init__()
         self.player_1_id = player_ids[0]
         self.player_2_id = player_ids[1]
         self.match = Match()
-        self.match.add_player(self.player_1_id, [300, 500], 1, 30, 1)
-        self.match.add_player(self.player_2_id, [700, 500], 1, 30, 1)
+        self.match.add_player(self.player_1_id, [300, 500], 0.25, 30, 1)
+        self.match.add_player(self.player_2_id, [700, 500], 0.25, 30, 1)
+        self.num_players = 2
 
     def relay_input(self, user_id, input_x, input_y):
         self.match.set_player_input(user_id, input_x, input_y)
@@ -33,6 +37,9 @@ class DuoLobby(Lobby):
         }
         return game_state
 
+    def remove_player(self, user_id):
+        self.num_players -= 1
+
 class LobbyManager():
     def __init__(self, u_dict):
         self.lobby_dict = {}
@@ -40,19 +47,21 @@ class LobbyManager():
 
     def host_duo_lobby(self, players):
         new_lobby = DuoLobby(players)
-        self.lobby_dict[new_lobby.lobby_id] = new_lobby
+        l_id = new_lobby.lobby_id
+        self.lobby_dict[l_id] = new_lobby
         for uid in players:
-            self.user_dict[uid].lobby_id = new_lobby.lobby_id
+            self.user_dict[uid].lobby_id = l_id
+            self.user_dict[uid].status = "PLAYING"
 
-        print("New lobby with id " + new_lobby.lobby_id + " started.")
+        print("New lobby with id " + l_id + " started.")
         new_lobby.play()
 
-        # Possibly test for rematch?
+        # Wait for all players to leave lobby
+        while(new_lobby.num_players > 0):
+            pass
 
-        del self.lobby_dict[new_lobby.lobby_id]
-        for uid in players:
-            self.user_dict[uid].lobby_id = "none"
-            self.user_dict[uid].status = "IDLE"
+        print("Lobby " + l_id + " finished.")
+        del self.lobby_dict[l_id]
 
     def get_lobby_by_playerid(self, user_id):
         return self.lobby_dict[self.user_dict[user_id].lobby_id]

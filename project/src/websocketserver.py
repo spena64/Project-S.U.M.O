@@ -31,6 +31,14 @@ class GameServer:
                 # TODO: Authentiacate user
 
                 user_id = message["id"]
+                if (user_id in self.user_dict):
+                    out_msg = {
+                    "type": "info",
+                    "body": "Already serving websocket for this user; closing connection."
+                    }
+                    await ws.send(json.dumps(out_msg))
+                    return
+
                 print("New connection at websocket " + str(ws) + " with id " + user_id)
                 self.user_dict[user_id] = OnlineUser(user_id)
                 out_msg = {
@@ -58,11 +66,17 @@ class GameServer:
 
             # Send outgoing messages
             if (self.user_dict[user_id].status == "PLAYING"):
+                lobby = self.lobby_manager.get_lobby_by_playerid(user_id)
                 out_msg = {
                     "type": "gameState",
-                    "body": self.lobby_manager.get_lobby_by_playerid(user_id).get_game_state(user_id)
+                    "body": lobby.get_game_state(user_id)
                 }
                 await ws.send(json.dumps(out_msg))
+                if (out_msg["body"]["matchData"]["state"] == "finished"):
+                    lobby.remove_player(user_id)
+                    self.user_dict[user_id].status = "IDLE"
+                    self.user_dict[user_id].lobby_id = "none"
+                    break
             
         del self.user_dict[user_id]
         print("Connection at websocket " + str(ws) + " closed, user " + user_id + " removed.")
@@ -70,7 +84,7 @@ class GameServer:
     def start_matchmaking_duo(self):
         while(True):
             new_group = self.queue_duo.find_players()
-            lobby_thread = threading.Thread(target=self.lobby_manager.host_duo_lobby, args=new_group, daemon=True)
+            lobby_thread = threading.Thread(target=self.lobby_manager.host_duo_lobby, args=(new_group,), daemon=True)
             lobby_thread.start()
 
     def start_game_server(self):

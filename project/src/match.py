@@ -1,7 +1,7 @@
 import time
 import math
 
-RING_CENTER_X = 500
+RING_CENTER_X = 700
 RING_CENTER_Y = 500
 RING_RADIUS = 450
 

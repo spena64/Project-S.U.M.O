@@ -8,6 +8,7 @@ class GameQueue():
 
     def add_user(self, user_id):
         self.user_queue.put(user_id)
+        print("User " + user_id + " added to queue.")
 
     def grab_user(self):
         return self.user_queue.get()
@@ -15,7 +16,7 @@ class GameQueue():
     def collect_players(self, num_players):
         group = []
         for i in range(num_players):
-            group[i] = self.grab_user()
+            group.append(self.grab_user())
         return group
 
     def find_players(self):

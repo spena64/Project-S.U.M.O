@@ -14,7 +14,7 @@ class requestHandler(BaseHTTPRequestHandler):
     
     def do_GET(self):
         if self.path == "/":
-            self.path = "/gametest.html"
+            self.path = "/index.html"
 
         try:
             mimeType = ""
@@ -28,6 +28,11 @@ class requestHandler(BaseHTTPRequestHandler):
             if self.path.endswith(".css"):
                 mimeType = "text/css"
                 sendReply = True
+            if self.path.endswith(".gif"):
+                f = open(curdir + sep + "public" + sep + self.path, mode="rb")
+                self.set_headers("image/gif")
+                self.wfile.write(f.read())
+                return
             
             if sendReply:
                 file = open(curdir + sep + "public" + sep + self.path)
