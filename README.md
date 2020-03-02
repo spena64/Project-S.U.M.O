@@ -11,6 +11,8 @@
 
 Project S.U.M.O. is a free browser-based multiplayer fighting game for people in search of a fun and competitive game to play with their friends. It is quick and easy to set up, allowing players to jump in the ring and enjoy a few rounds with very little effort. No downloads are required - players can simply visit the site, invite friends, and begin playing. In Project S.U.M.O., players will control 2-dimensional circles that navigate a circular arena. Two players at a time will go head to head, bumping into each other and attempting to knock their opponent out of the gameplay space. Unlike other fighting games that require people to remember complex controls, Project S.U.M.O uses simple controls and can be enjoyed by all ages and skill levels. It incorporates unique physics-based mechanics in a way that is not seen in other fighting games. The result is a simple yet addicting fast-paced fighting game unlike any other.
 
+Website link: https://project-sumo-e6f87.firebaseapp.com/
+
 ## Sprint 1 
 
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
@@ -77,7 +79,6 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
  ## Sprint 5
  
 - [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-5)
-- [Product Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=0)
 - [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=704347848)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
@@ -92,6 +93,5 @@ Project S.U.M.O. is a free browser-based multiplayer fighting game for people in
 - [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
 - [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
 - Product Demonstration
-    - [Website Portion](https://www.youtube.com/watch?v=l7IL7vkGsAI)
-    - [Game Portion](https://www.youtube.com/watch?v=M3Y8wHI_S7U)
+    - [Video](https://www.youtube.com/watch?v=6ea-37L5Yw0)
     - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)
