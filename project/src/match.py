@@ -22,6 +22,10 @@ class Match:
             for id in self.player_dict:
                 player = self.player_dict[id]
                 player.move()
+
+                for other_id in self.player_dict:
+                    player.check_collision(self.player_dict[other_id])
+
                 if (player.is_in_bounds()):
                     in_ring_num += 1
             
@@ -117,10 +121,21 @@ class Player:
             self.direction = direction_vector
         return
 
-    def check_collision(self):
+    def check_collision(self, other_player):
+        # We do not need to check collisions against ourself
+        if (other_player == self):
+            return
+
+        other_pos = other_player.get_position()
+        other_radius = other_player.get_radius()
+
+        distance = math.sqrt( (self.position[0] - other_pos[0]) ** 2 + (self.position[1] - other_pos[1]) ** 2 )
+        if (distance < self.radius + other_radius):
+            self.add_impulse()
+        
         return
 
-    def bounce(self):
+    def add_impulse(self):
         return
 
     def is_in_bounds(self):
