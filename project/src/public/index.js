@@ -117,7 +117,9 @@ function pushToDatabase()
     {
       email: email.value,
       password: pass.value,
-      nickname: nickname.value
+      nickname: nickname.value,
+      wins: 0,
+      losses: 0
     });
 }
 
