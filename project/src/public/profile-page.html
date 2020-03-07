@@ -1,14 +1,33 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
+    <head>
+        <title>Profile Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
     
-</body>
+
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+
+    </head>
+
+    <body>
+        <div id="logo" class="main">
+            <h1>Project S.U.M.O</h1>
+        </div>
+        <div class="main">
+            <h2>Profile Page</h2>
+            <p>
+               Wins: 0
+               Losses: 0   
+            </p>
+            <br />
+
+            <button onclick="window.location.href='home-page.html'" id = "back">Back</button>
+        </div>
+ 
+        <script src="firebase.js"> </script>
+        <script src="index.js"> </script>
+    </body>
+
 </html>
