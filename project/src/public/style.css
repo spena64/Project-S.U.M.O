@@ -78,11 +78,23 @@ body
 
   .nav-bar li {
     float: right; 
+    padding: 15px; 
   }
 
   .nav-bar a {
     display: block;
     color: #5d8ffc;
     text-align: center; 
-    padding: 14px 16px; 
+    padding: 8px; 
+    text-decoration: none; 
+    font-weight: 700;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    border-radius: 5px; 
+  }
+
+  .nav-bar a:hover {
+    background-color: #5d8ffc;
+    color: #fff; 
   }
