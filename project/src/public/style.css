@@ -70,3 +70,19 @@ body
     border: 1px solid #5d8ffc;
     cursor: pointer;
   }
+
+  .nav-bar ul 
+  {
+    list-style-type: none; 
+  }
+
+  .nav-bar li {
+    float: right; 
+  }
+
+  .nav-bar a {
+    display: block;
+    color: #5d8ffc;
+    text-align: center; 
+    padding: 14px 16px; 
+  }
