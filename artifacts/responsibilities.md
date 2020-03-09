@@ -15,3 +15,11 @@
 | Andrew | Worked on front end user interface for the gameplay screen. |
 | Stephanie | Worked with Steven to create persistent login sessions and retrieve user information from the database. |
 | Mike | Worked on setting up the matchmaking system. |
+
+## Sprint 6
+| Name | Responsibilities | 
+|------|------------------|
+| Steven | Worked on storing and retrieving player score data with the database. |
+| Andrew | Worked on user interface for matchmaking loading screen. |
+| Stephanie | Worked on front end user interface and page navigation. |
+| Mike | Worked on player physics collisions. |

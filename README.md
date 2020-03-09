@@ -98,7 +98,7 @@ Website link: https://project-sumo-e6f87.firebaseapp.com/
 
 ## Sprint 6
  
-- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-5)
+- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-6)
 - [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1258627765)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
@@ -113,5 +113,5 @@ Website link: https://project-sumo-e6f87.firebaseapp.com/
 - [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
 - [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
 - Product Demonstration
-    - [Video](https://www.youtube.com/watch?v=6ea-37L5Yw0)
+    - [Video](https://www.youtube.com/watch?v=yepl-ENZCp4)
     - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)
