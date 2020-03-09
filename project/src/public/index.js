@@ -2,6 +2,7 @@ const email = document.getElementById("email_field");
 const pass = document.getElementById("password_field");
 const cpass = document.getElementById("cpassword");
 const nickname = document.getElementById("nickname_field");
+const wins = 
 
 
 async function createAccount()
@@ -51,6 +52,17 @@ async function login()
     window.alert("Email and password required!");
 }
 
+async function showStats()
+{
+  // let wins = await retrieve("wins");
+  // window.alert("Wins " + wins + "!");
+  if (auth.currentUser)
+    {
+      let wins = await retrieve("wins");
+      let losses = await retrieve("losses"); 
+        window.alert("Total Wins: " + wins + "\n" + "Total Losses: " + losses);
+    }
+}
 async function retrieve(data)
 {
   var userId = firebase.auth().currentUser.uid; 
