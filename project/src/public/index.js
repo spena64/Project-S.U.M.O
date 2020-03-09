@@ -3,6 +3,7 @@ const pass = document.getElementById("password_field");
 const cpass = document.getElementById("cpassword");
 const nickname = document.getElementById("nickname_field");
 
+
 async function createAccount()
 { 
   if (email.value != "" && nickname.value != "" && pass.value != "" && cpass.value != "")
@@ -66,6 +67,16 @@ async function retrieve(data)
   });
 }
 
+async function showStats()
+{
+  if (auth.currentUser)
+    {
+      let wins = await retrieve("wins");
+      let losses = await retrieve("losses"); 
+        window.alert("Total Wins: " + wins + "\n" + "Total Losses: " + losses);
+    }
+}
+
 function signOut() 
 {
   auth.signOut();
@@ -118,8 +129,8 @@ function pushToDatabase()
       email: email.value,
       password: pass.value,
       nickname: nickname.value,
-      wins: 0,
-      losses: 0
+      wins: "0",
+      losses: "0"
     });
 }
 
