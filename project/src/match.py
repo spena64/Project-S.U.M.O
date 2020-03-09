@@ -70,7 +70,8 @@ class Match:
         self.player_dict[user_id].set_direction(direction_vector)
         return
 
-    def normalize_input(self, x, y):
+    @staticmethod
+    def normalize_input(x, y):
         magnitude = math.sqrt(x ** 2 + y ** 2)
         if (magnitude == 0):
             return [0, 0]
@@ -91,8 +92,14 @@ class Player:
     def get_position(self):
         return self.position
 
+    def get_speed(self):
+        return self.speed
+
     def get_radius(self):
         return self.radius
+
+    def get_mass(self):
+        return self.mass
 
     def move(self):
         self.speed[0] += self.direction[0] * self.acceleration_rate
@@ -105,9 +112,9 @@ class Player:
         self.speed[1] /= self.drag
 
         # Stopping speed
-        if (abs(self.speed[0]) < 0.1):
+        if (abs(self.speed[0]) < 0.01):
             self.speed[0] = 0
-        if (abs(self.speed[1]) < 0.1):
+        if (abs(self.speed[1]) < 0.01):
             self.speed[1] = 0
 
         # Kill movement if out of bounds
@@ -129,14 +136,20 @@ class Player:
         other_pos = other_player.get_position()
         other_radius = other_player.get_radius()
 
-        distance = math.sqrt( (self.position[0] - other_pos[0]) ** 2 + (self.position[1] - other_pos[1]) ** 2 )
+        displacement_x = self.position[0] - other_pos[0]
+        displacement_y = self.position[1] - other_pos[1]
+        distance = math.sqrt(displacement_x ** 2 + displacement_y ** 2)
         if (distance < self.radius + other_radius):
-            self.add_impulse()
-        
-        return
+            other_speed = math.sqrt(other_player.get_speed()[0] ** 2 + other_player.get_speed()[1] ** 2)
+            self.collide(other_speed, displacement_x, displacement_y)
 
-    def add_impulse(self):
-        return
+    def collide(self, other_speed, displacement_x, displacement_y):
+        disp_vector = Match.normalize_input(displacement_x, displacement_y)
+        self.position[0] -= disp_vector[0] * 0.1
+        self.position[1] -= disp_vector[1] * 0.1
+
+        self.speed[0] += disp_vector[0] * other_speed * 0.5
+        self.speed[1] += disp_vector[1] * other_speed * 0.5
 
     def is_in_bounds(self):
         return self.is_alive
