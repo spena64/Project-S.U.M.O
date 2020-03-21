@@ -53,7 +53,7 @@ document.addEventListener('keyup', function(event) {
 
 // Establish websocket connection
 const userID = Math.random().toString(36).substring(2);
-const ws = new WebSocket("ws://localhost:8081/");
+const ws = new WebSocket("ws://" + location.hostname + ":8081/");
 let socketOpen = false;
 
 let matchType = "duo"
