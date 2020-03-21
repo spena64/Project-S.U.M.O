@@ -115,3 +115,23 @@ Website link: https://project-sumo-e6f87.firebaseapp.com/
 - Product Demonstration
     - [Video](https://www.youtube.com/watch?v=yepl-ENZCp4)
     - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)
+
+## Sprint 7
+ 
+- [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-6)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1258627765)
+- [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
+- [Trello Board](https://trello.com/b/imslrVps/project-sumo)
+- [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=24169246)
+- [Velocity Chart](https://docs.google.com/spreadsheets/d/1Y7rINpsBkk2LOWqcGsCNgsmPfx8dYFJeEIbdmDUdqv8/edit?usp=sharing)
+- Design Documents
+  - [Event Storming](https://miro.com/app/board/o9J_kvGTt2E=/)
+  - [System Architecture](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md)
+  - [Class Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md#major-classes)
+  - [Sequence Diagrams](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/architecture.md#major-classes)
+- [Source Code](https://github.com/spena64/Project-S.U.M.O/tree/master/project/src)
+- [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
+- [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
+- Product Demonstration
+    - [Video](https://www.youtube.com/watch?v=yepl-ENZCp4)
+    - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)
