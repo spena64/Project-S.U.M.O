@@ -133,10 +133,14 @@ setInterval(function() {
     // Draw text
     context.fillStyle = 'black';
     context.font = "40px Arial";
-    context.fillText(playerNames[0], 1650, 200);
-    context.font = "40px Arial";
     context.fillText("------- VS ------", 1600, 250);
-    context.font = "40px Arial";
+
+    playerIds = Object.keys(players)
+
+    context.fillStyle = players[playerIds[0]].color;
+    context.fillText(playerNames[0], 1650, 200);
+
+    context.fillStyle = players[playerIds[1]].color;
     context.fillText(playerNames[1], 1650, 300);
 
     // Draw ring
@@ -148,7 +152,7 @@ setInterval(function() {
     // Draw players
     for (let id in players) {
         let player = players[id];
-        context.fillStyle = 'green';
+        context.fillStyle = player.color;
         context.beginPath();
         context.arc(player.x, player.y, player.radius, 0, 2 * Math.PI);
         context.fill();

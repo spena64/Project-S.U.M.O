@@ -1,5 +1,6 @@
 import time
 import math
+import random
 
 RING_CENTER_X = 700
 RING_CENTER_Y = 500
@@ -10,9 +11,11 @@ class Match:
         self.player_dict = {}
         self.state = "waiting"
         self.winner = "Undecided"
+        self.color_set = ["#C21212", "#EA8015", "#EAbB15", "#69880D", "#43B911", "#13D78D", "#10D3EF", "#096ACC", "#9553D7", "#F971D7"]
 
     def add_player(self, user_id, position, acceleration_rate, radius, mass):
-        self.player_dict[user_id] = Player(position, acceleration_rate, radius, mass)
+        color = self.color_set.pop(random.randint(0, len(self.color_set) - 1))
+        self.player_dict[user_id] = Player(position, acceleration_rate, radius, mass, color)
 
     def run_game_loop(self):
         # Game loop
@@ -55,7 +58,8 @@ class Match:
         player_state = {
             "x": self.player_dict[user_id].get_position()[0],
             "y": self.player_dict[user_id].get_position()[1],
-            "radius": self.player_dict[user_id].get_radius()
+            "radius": self.player_dict[user_id].get_radius(),
+            "color": self.player_dict[user_id].get_color()
         }
         return player_state
 
@@ -79,13 +83,14 @@ class Match:
         return [x / magnitude, y / magnitude]
     
 class Player:
-    def __init__(self, position, acceleration_rate, radius, mass):
+    def __init__(self, position, acceleration_rate, radius, mass, color):
         self.position = position
         self.speed = [0, 0]
         self.direction = [0, 0]
         self.acceleration_rate = acceleration_rate
         self.radius = radius
         self.mass = mass
+        self.color = color
         self.drag = 1.01
         self.is_alive = True
     
@@ -100,6 +105,9 @@ class Player:
 
     def get_mass(self):
         return self.mass
+
+    def get_color(self):
+        return self.color
 
     def move(self):
         self.speed[0] += self.direction[0] * self.acceleration_rate
