@@ -154,8 +154,22 @@ firebase.auth().onAuthStateChanged(user => {
       window.location.href = 'home-page.html';
     }
     else
+    {
       console.log('logged in as ' + user.email);
+      var userNav = document.getElementById("nav-bar-user"); 
+      var guestNav = document.getElementById("nav-bar-guest"); 
+      if (user.email != null) {
+        userNav.style.display = 'block'; 
+        guestNav.style.display = 'none'; 
+      }
+      else {
+        userNav.style.display = 'none'; 
+        guestNav.style.display = 'block';
+      }
+    }
   }
   else
-      console.log('no user logged in');
+  {
+    console.log('no user logged in');
+  }
 })
