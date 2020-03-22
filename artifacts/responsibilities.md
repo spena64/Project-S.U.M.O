@@ -23,3 +23,11 @@
 | Andrew | Worked on user interface for matchmaking loading screen. |
 | Stephanie | Worked on front end user interface and page navigation. |
 | Mike | Worked on player physics collisions. |
+
+## Sprint 7 
+| Name | Responsibilities | 
+|------|------------------|
+| Steven | Worked on storing and retrieving player score data with the database. |
+| Andrew | Worked on user interface for matchmaking loading screen. |
+| Stephanie | Worked on front end user interface and page navigation. |
+| Mike | Worked on player colors. |
