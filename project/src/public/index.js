@@ -156,28 +156,24 @@ firebase.auth().onAuthStateChanged(user => {
     else
     {
       console.log('logged in as ' + user.email);
+      var userNav = document.getElementById("nav-bar-user"); 
+      var guestNav = document.getElementById("nav-bar-guest"); 
+      if (user.email != null) {
+        userNav.style.display = 'block'; 
+        guestNav.style.display = 'none'; 
+      }
+      else {
+        userNav.style.display = 'none'; 
+        guestNav.style.display = 'block';
+      }
     }
   }
   else
   {
     console.log('no user logged in');
-  }
-})
-
-document.addEventListener('readystatechange', event => {
-  if (event.target.readyState === "interactive" || event.target.readyState === "complete") {
-    var user = firebase.auth().currentUser;
     var userNav = document.getElementById("nav-bar-user"); 
     var guestNav = document.getElementById("nav-bar-guest"); 
-
-    if (user != null) {
-      userNav.style.display = 'block'; 
-      guestNav.style.display = 'none'; 
-    }
-    else {
-      userNav.style.display = 'none'; 
-      guestNav.style.display = 'block';
-    }
+    userNav.style.display = 'none'; 
+    guestNav.style.display = 'block';
   }
-
-});
+})
