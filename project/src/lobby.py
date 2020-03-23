@@ -1,6 +1,7 @@
 from match import Match
 import random
 import string
+import threading
 import time
 
 class Lobby():
@@ -27,6 +28,9 @@ class DuoLobby(Lobby):
     def play(self):
         self.status = "STARTED"
         self.match.run_game_loop()
+        # Wait for all players to leave
+        while (self.num_players > 0):
+            pass
         self.status = "FINISHED"
 
     def get_game_state(self, user_id):
@@ -39,6 +43,7 @@ class DuoLobby(Lobby):
 
     def remove_player(self, user_id):
         self.num_players -= 1
+        self.match.num_players -= 1
 
 class LobbyManager():
     def __init__(self, u_dict):
@@ -55,10 +60,6 @@ class LobbyManager():
 
         print("New lobby with id " + l_id + " started.")
         new_lobby.play()
-
-        # Wait for all players to leave lobby
-        while(new_lobby.num_players > 0):
-            pass
 
         print("Lobby " + l_id + " finished.")
         del self.lobby_dict[l_id]

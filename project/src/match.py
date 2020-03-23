@@ -12,6 +12,7 @@ class Match:
         self.state = "waiting"
         self.winner = "Undecided"
         self.color_set = ["#C21212", "#EA8015", "#EAbB15", "#69880D", "#43B911", "#13D78D", "#10D3EF", "#096ACC", "#9553D7", "#F971D7"]
+        self.num_players = 2
 
     def add_player(self, user_id, position, acceleration_rate, radius, mass):
         color = self.color_set.pop(random.randint(0, len(self.color_set) - 1))
@@ -20,7 +21,7 @@ class Match:
     def run_game_loop(self):
         # Game loop
         self.state = "started"
-        while(True):
+        while(self.num_players > 1):
             in_ring_num = 0
             for id in self.player_dict:
                 player = self.player_dict[id]

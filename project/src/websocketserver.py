@@ -85,6 +85,9 @@ class GameServer:
         if (user_id in self.user_dict):
             if (self.user_dict[user_id].status == "QUEUEING"):
                 self.queue_duo.remove_user()
+            if (self.user_dict[user_id].status == "PLAYING"):
+                lobby = self.lobby_manager.get_lobby_by_playerid(user_id)
+                lobby.remove_player(user_id)
             del self.user_dict[user_id]
         print("Connection at websocket " + str(ws) + " closed, user " + user_id + " removed.")
 
