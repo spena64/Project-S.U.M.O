@@ -40,6 +40,7 @@ input, button
 
 .main input 
 {
+  color: #fff; 
   display: block;
   border: 1px solid #F1A9F2;
   border-radius: 5px;
@@ -94,7 +95,7 @@ input, button
 .nav-bar a 
 {
   display: block;
-  color: #A6EBED;
+  color: #F1A9F2;
   text-align: center; 
   padding: 8px; 
   text-decoration: none; 
@@ -107,7 +108,7 @@ input, button
 
 .nav-bar a:hover 
 {
-  background-color: #A6EBED;
+  background-color: #F1A9F2;
   color: #121212; 
 }
 
