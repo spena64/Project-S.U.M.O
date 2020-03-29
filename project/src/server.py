@@ -33,6 +33,11 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.set_headers("image/gif")
                 self.wfile.write(f.read())
                 return
+            if self.path.endswith(".png"):
+                f = open(curdir + sep + "public" + sep + self.path, mode="rb")
+                self.set_headers("image/png")
+                self.wfile.write(f.read())
+                return
             
             if sendReply:
                 file = open(curdir + sep + "public" + sep + self.path)
