@@ -111,6 +111,12 @@ input, button
   color: #121212; 
 }
 
+.nav-bar img
+{
+  height: 60;
+  width: 100; 
+}
+
 #logo img 
 {
   height: 200; 
