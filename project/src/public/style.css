@@ -1,10 +1,19 @@
+/* Color Palette 
+   #121212: Dark gray - used for backgrounds
+   #1BEBED: Cyan - primary color of Project SUMO logo 
+   #EF5BF2: Magenta - secondary color of Project SUMO logo 
+   #A6EBED: Cyan at 30% saturation - desaturated for best use on dark background
+   #F1A9F2: Magenta at 30% saturation - desaturated for best use on dark background 
+*/
+
 body 
 {
-  background: #fff;
+  background: #121212;
   padding: 0px;
   margin: 0px;
   font-family: 'Oxygen', 'Verdana', sans-serif;
   font-size: 16px;
+  color: #fff; 
 }
 
 input, button 
@@ -18,7 +27,7 @@ input, button
   position: relative; 
   text-align: center; 
   font-family: 'Oxygen', 'Verdana', sans-serif;
-  top: 20%; 
+  top: 10%; 
 }
 
 .main, .loggedin-div
@@ -32,9 +41,9 @@ input, button
 .main input 
 {
   display: block;
-  border: 1px solid #ccc;
+  border: 1px solid #F1A9F2;
   border-radius: 5px;
-  background: #fff;
+  background: #121212;
   padding: 15px;
   outline: none;
   width: 100%;
@@ -50,9 +59,9 @@ input, button
 }
 .main button, .loggedin button
 {
-  background: #5d8ffc;
-  color: #fff;
-  border: 1px solid #5d8ffc;
+  background: #A6EBED;
+  color: #121212;
+  border: 1px solid #A6EBED;
   border-radius: 5px;
   padding: 15px;
   display: block;
@@ -65,9 +74,9 @@ input, button
 
 .main button:hover, .loggedin button
 {
-  background: #fff;
-  color: #5d8ffc;
-  border: 1px solid #5d8ffc;
+  background: #121212;
+  color: #A6EBED;
+  border: 1px solid #A6EBED;
   cursor: pointer;
 }
 
@@ -85,7 +94,7 @@ input, button
 .nav-bar a 
 {
   display: block;
-  color: #5d8ffc;
+  color: #A6EBED;
   text-align: center; 
   padding: 8px; 
   text-decoration: none; 
@@ -98,6 +107,12 @@ input, button
 
 .nav-bar a:hover 
 {
-  background-color: #5d8ffc;
-  color: #fff; 
+  background-color: #A6EBED;
+  color: #121212; 
+}
+
+#logo img 
+{
+  height: 200; 
+  width: 300; 
 }
