@@ -102,10 +102,13 @@ ws.onmessage = function(event) {
         
         if (msg.body.matchData.state == "finished") {
             if (msg.body.matchData.youWin == true) {
-                alert("You win!")
+                document.querySelector("#match-end-message").innerHTML = "You win!";
+                document.querySelector(".modal-content").style.backgroundColor = "#5fd66f";
             } else {
-                alert("You lost to " + msg.body.matchData.winner + "!");
+                document.querySelector("#match-end-message").innerHTML = "You lost to " + msg.body.matchData.winner + "!";
+                document.querySelector(".modal-content").style.backgroundColor = "#ff7979";
             }
+            document.querySelector(".modal").style.display = "block";
         }
     }
 };
