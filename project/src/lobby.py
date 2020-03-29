@@ -18,8 +18,8 @@ class DuoLobby(Lobby):
         self.player_1_id = player_ids[0]
         self.player_2_id = player_ids[1]
         self.match = Match()
-        self.match.add_player(self.player_1_id, [300, 500], 0.25, 30, 1)
-        self.match.add_player(self.player_2_id, [700, 500], 0.25, 30, 1)
+        self.match.add_player(self.player_1_id, [450, 500], 0.25, 30, 1)
+        self.match.add_player(self.player_2_id, [950, 500], 0.25, 30, 1)
         self.num_players = 2
 
     def relay_input(self, user_id, input_x, input_y):
