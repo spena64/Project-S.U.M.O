@@ -1,7 +1,7 @@
-# Responsibilities 
+# Responsibilities
 
 ## Sprint 4
-| Name | Responsibilities | 
+| Name | Responsibilities |
 |------|------------------|
 | Steven | Worked with Stephanie to allow account creation, recognize existing user log-in, and manage data input into the database. |
 | Andrew | Worked on the design documentation and video demonstration. |
@@ -9,7 +9,7 @@
 | Mike | Worked on setting up the game environment and web sockets to allow users to play the game. |
 
 ## Sprint 5
-| Name | Responsibilities | 
+| Name | Responsibilities |
 |------|------------------|
 | Steven | Worked with Stephanie to create persistent login sessions and retrieve user information from the database. |
 | Andrew | Worked on front end user interface for the gameplay screen. |
@@ -17,25 +17,25 @@
 | Mike | Worked on setting up the matchmaking system. |
 
 ## Sprint 6
-| Name | Responsibilities | 
+| Name | Responsibilities |
 |------|------------------|
 | Steven | Worked on storing and retrieving player score data with the database. |
 | Andrew | Worked on user interface for matchmaking loading screen. |
 | Stephanie | Worked on front end user interface and page navigation. |
 | Mike | Worked on player physics collisions. |
 
-## Sprint 7 
-| Name | Responsibilities | 
+## Sprint 7
+| Name | Responsibilities |
 |------|------------------|
 | Steven | Worked on storing and retrieving player score data with the database. |
 | Andrew | Worked on user interface for matchmaking loading screen. |
 | Stephanie | Worked on front end user interface and page navigation. |
 | Mike | Worked on player colors. |
 
-## Sprint 8 
-| Name | Responsibilities | 
+## Sprint 8
+| Name | Responsibilities |
 |------|------------------|
-| Steven | Worked on storing and retrieving player score data with the database. |
+| Steven | Worked on updating player scores after each match. |
 | Andrew | Worked on user interface for matchmaking loading screen. |
 | Stephanie | Worked on front end user interface and design. |
 | Mike | Worked on creating option to return to the game menu. |
