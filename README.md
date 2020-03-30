@@ -139,7 +139,7 @@ Website link: https://project-sumo-e6f87.firebaseapp.com/
 ## Sprint 8
 
 - [Responsibilities](https://github.com/spena64/Project-S.U.M.O/blob/master/artifacts/responsibilities.md#sprint-6)
-- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=1817817888)
+- [Sprint Backlog](https://docs.google.com/spreadsheets/d/1go4YuBvXYnaxIQhTIqfnzwtipRL7TgXbCzjj1Ci2vPs/edit#gid=2078181286)
 - [Requirements](https://docs.google.com/spreadsheets/d/1WuFJWFG5-tbD2Lp7FUpZnQYlBwd6Ueg46QxHD1kXd7w/edit?usp=sharing)
 - [Trello Board](https://trello.com/b/imslrVps/project-sumo)
 - [Burndown Chart](https://docs.google.com/spreadsheets/d/1cNI8jGBtCwpaofE31zb6-Dixqli5mqBZkOkvYUJKvKw/edit#gid=1636883784)
