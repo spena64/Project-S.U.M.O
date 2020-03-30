@@ -153,5 +153,5 @@ Website link: https://project-sumo-e6f87.firebaseapp.com/
 - [Automated Tests](https://github.com/spena64/Project-S.U.M.O/tree/master/project/test)
 - [Manual Tests](https://docs.google.com/spreadsheets/d/1RXkM9A5q_I_3UT_nwOQTIKSmISR1kaVl9aHqNrrUFmc/edit#gid=0)
 - Product Demonstration
-    - [Video](https://www.youtube.com/watch?v=Jgh-S75SF94)
+    - [Video](https://youtu.be/O48q9SMduNc)
     - [Link to Website](https://project-sumo-e6f87.firebaseapp.com/)
