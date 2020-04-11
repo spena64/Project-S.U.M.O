@@ -11,6 +11,7 @@ body
   background-image: url("background.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 0px;
   margin: 0px;
   font-family: 'Oxygen', 'Verdana', sans-serif;
