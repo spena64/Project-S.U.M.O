@@ -22,5 +22,6 @@ db = firebase.database()
 # Pass the user's id to update their data
 # TODO get the current userID using the uid instead of hardcoding the changes
 
-results = db.child("Users").child('EpZIBBHlPYXi4J9pd7dpDYOyNtU2').update({'wins': '0','losses':'11'})
+#                             The Players UID or Username should go here
+results = db.child("Users").child('EpZIBBHlPYXi4J9pd7dpDYOyNtU2').update({'wins': '100','losses':'0'})
 
