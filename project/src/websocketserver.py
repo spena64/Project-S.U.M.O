@@ -2,6 +2,7 @@ import asyncio
 import json
 import websockets
 import threading
+import os
 from online_user import OnlineUser
 from game_queue import GameQueue
 from lobby import LobbyManager
@@ -9,7 +10,7 @@ from lobby import DuoLobby
 
 class GameServer:
     def __init__(self):
-        self.PORT = 8081
+        self.PORT = int(os.environ.get("PORT", 8080))
         self.user_dict = {}
         self.lobby_manager = LobbyManager(self.user_dict)
 
@@ -100,7 +101,7 @@ class GameServer:
 
     def start_game_server(self):
         print("Starting server at port " + str(self.PORT))
-        start_server = websockets.serve(self.on_message, "localhost", self.PORT)
+        start_server = websockets.serve(self.on_message, host="0.0.0.0", port=self.PORT)
 
         asyncio.get_event_loop().run_until_complete(start_server)
         asyncio.get_event_loop().run_forever()
