@@ -1,9 +1,62 @@
+/* Color Palette 
+   #121212: Dark gray - used for backgrounds
+   #1BEBED: Cyan - primary color of Project SUMO logo 
+   #EF5BF2: Magenta - secondary color of Project SUMO logo 
+   #A6EBED: Cyan at 30% saturation - desaturated for best use on dark background
+   #F1A9F2: Magenta at 30% saturation - desaturated for best use on dark background 
+*/
+
+body {
+  background-color: #121212;
+  display: block; 
+  padding: 0px;
+  margin: 0px auto;
+  font-family: 'Oxygen', 'Verdana', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 0 0 5px #FF0000, 0 0 5px #0000FF; 
+  color: #F1A9F2;
+  text-align: center; 
+}
+
+button
+{
+  font-family: 'Oxygen', 'Verdana', sans-serif;
+  font-weight: 700;
+  background: #A6EBED;
+  color: #121212;
+  border: 1px solid #A6EBED;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 15%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  margin-top: 15px; 
+  margin: 0px auto; 
+}
+
+button:hover
+{
+  background: #121212;
+  color: #A6EBED;
+  border: 1px solid #A6EBED;
+  cursor: pointer;
+}
+
 canvas {
+    margin-top: 4%; 
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
     height: 80%;
-		border: 2px solid black;
+		border: 2px solid #EF5BF2;
+}
+
+#loading {
+  margin-top: 10%; 
+  margin-bottom: 5%; 
 }
 
 .loader {
@@ -13,10 +66,12 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0px;
+  margin: 0px auto; 
+  background: #121212;
+  display: block;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .loader.hidden {

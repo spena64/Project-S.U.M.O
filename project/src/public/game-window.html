@@ -4,8 +4,11 @@
         <link rel="stylesheet" href="style_gamewindow.css">
     </head>
     <body>
-      <div class="loader">
-        <img src="images/loading.gif" alt="Loading...">
+      <div class="loader">  
+        <div id="loading">
+          <p> Loading... </p>
+          <img src="images/loading.gif" alt="Loading...">
+        </div>
         <button onclick = "window.location.href='quick-play.html'" id = "cancel">Cancel</button>
       </div>
       <canvas id="canvas"></canvas>

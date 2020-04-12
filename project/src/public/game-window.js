@@ -103,10 +103,10 @@ ws.onmessage = function(event) {
         if (msg.body.matchData.state == "finished") {
             if (msg.body.matchData.youWin == true) {
                 document.querySelector("#match-end-message").innerHTML = "You win!";
-                document.querySelector(".modal-content").style.backgroundColor = "#5fd66f";
+                document.querySelector(".modal-content").style.backgroundColor = "#A6EBED";
             } else {
                 document.querySelector("#match-end-message").innerHTML = "You lost to " + msg.body.matchData.winner + "!";
-                document.querySelector(".modal-content").style.backgroundColor = "#ff7979";
+                document.querySelector(".modal-content").style.backgroundColor = "#F1A9F2";
             }
             document.querySelector(".modal").style.display = "block";
         }
@@ -128,13 +128,13 @@ setInterval(function() {
     context.clearRect(0, 0, 2000, 1000);
     
     // Draw chat box
-    context.strokeStyle = 'black';
+    context.strokeStyle = 'magenta';
     context.beginPath();
     context.rect(1500,500,500,500);
     context.stroke();
 
     // Draw text
-    context.fillStyle = 'black';
+    context.fillStyle = 'white';
     context.font = "40px Arial";
     context.fillText("------- VS ------", 1600, 250);
 
@@ -147,7 +147,7 @@ setInterval(function() {
     context.fillText(playerNames[1], 1650, 300);
 
     // Draw ring
-    context.strokeStyle = 'red';
+    context.strokeStyle = '#1BEBED';
     context.beginPath();
     context.arc(700, 500, 450, 0, 2 * Math.PI);
     context.stroke();
